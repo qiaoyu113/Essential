@@ -1,5 +1,5 @@
 {
-  "name": "my-kit",
+  "name": "Essential",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",

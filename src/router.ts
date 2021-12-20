@@ -8,7 +8,19 @@
 
  import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router'
 
- const routes = [{
+ const routes = [
+  {
+    title: '介绍',
+    name: 'essential',
+    path: '/',
+    component: () => import('packages/Essential/docs/README.md'),
+  },
+  {
+    title: '介绍',
+    name: 'Essential',
+    path: '/components/Introduce',
+    component: () => import('packages/Essential/docs/README.md'),
+  },{
     title: '按钮',
     name: 'Button',
     path: '/components/Button',
@@ -41,5 +53,5 @@
  };
  
  const router = createRouter(routerConfig as RouterOptions);
- 
+
  export default router;
