@@ -1,0 +1,22 @@
+[
+  {
+    "compName": "Meau",
+    "compZhName": "开发指南"
+  },
+  {
+    "compName": "Meau",
+    "compZhName": "组件"
+  },
+  {
+    "compName": "Input",
+    "compZhName": "Input",
+    "compDesc": "Input组件",
+    "compClassName": "input"
+  },
+  {
+    "compName": "Radio",
+    "compZhName": "Radio",
+    "compDesc": "Radio组件",
+    "compClassName": "radio"
+  }
+]
