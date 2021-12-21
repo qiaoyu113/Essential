@@ -13,7 +13,7 @@
         <el-input
           v-model="ruleForm[params.prop]"
           :type="params.kind"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           v-on="params.listeners"
         />
       </el-form-item>
@@ -33,7 +33,7 @@
           start-placeholder="开始日期"
           end-placeholder="结束日期"
           :placeholder="params.placeholder"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           v-on="params.listeners"
         />
       </el-form-item>
@@ -50,7 +50,7 @@
             v-for="(item,index) in params.radio"
             :key="'radio-'+item.type+'-'+index"
             :label="item.type"
-            v-bind="params.tagAttrs || {}"
+            v-bind="params.attrs || {}"
           >
             {{ item.label }}
           </el-radio>
@@ -80,7 +80,7 @@
       >
         <el-select
           v-model="ruleForm[params.prop]"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           v-on="params.listeners"
         >
           <el-option
@@ -101,7 +101,7 @@
       >
         <el-checkbox-group
           v-model="ruleForm[params.prop]"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           v-on="params.listeners"
         >
           <el-checkbox
@@ -129,7 +129,7 @@
             step: '00:15',
             end: '23:45'
           }"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           placeholder="开始日期"
           v-on="params.listeners"
         />
@@ -140,7 +140,7 @@
             step: '00:15',
             end: '23:45'
           }"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           placeholder="结束日期"
           v-on="params.listeners"
         />
@@ -155,7 +155,7 @@
       >
         <el-cascader
           v-model="ruleForm[params.prop]"
-          v-bind="params.tagAttrs || {}"
+          v-bind="params.attrs || {}"
           :options="params.options"
           v-on="params.listeners"
         />

@@ -24,7 +24,7 @@ private formItem:any[] = [
    	type: 1,
    	label: '姓名',
     key: 'name',
-    tagAttrs: {
+    attrs: {
     	placeholder: '请输入姓名'
    	}
    },
@@ -32,7 +32,7 @@ private formItem:any[] = [
      type: 1,
      label: '电话',
      key: 'phone',
-     tagAttrs: {
+     attrs: {
         placeholder: '请输入电话'
      }
    },
@@ -40,7 +40,7 @@ private formItem:any[] = [
       type: 2,
       label: '来源渠道',
       key: 'channel',
-      tagAttrs: {
+      attrs: {
       // disabled: true,
         clearable: true,
         multiple: true,
@@ -101,7 +101,7 @@ private formItem:any[] = [
 | label     | 汉字显示                           | String   | 是       |
 | key       | v-model绑定form对应的属性          | String   | 是       |
 | options   | 下拉框，radio等对应的列表          | Array    | 否       |
-| tagAttrs  | Input、select等对应的属性          | Object   | 否       |
+| attrs  | Input、select等对应的属性          | Object   | 否       |
 | rules     | 表单校验(参考element-ui的表单验证) | Object   | 否       |
 | col       | 单元格独占几列                     | Number   | 否       |
 | listeners | 出入组件的事件                     | Function | 否       |
@@ -182,7 +182,7 @@ private formItem:any[] = [
 | label    | 下拉的汉字       | string         | 是       |
 | value    | 点击的值         | string         | 是       |
 | icon     | 图标             | string         | 是       |
-| tagAttrs | item上绑定的属性 | 和el-input一样 | 否       |
+| attrs | item上绑定的属性 | 和el-input一样 | 否       |
 
 
 

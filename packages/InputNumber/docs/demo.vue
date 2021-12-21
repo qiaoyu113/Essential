@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="Input组件"
     >
       <es-form
         ref="EsForm"
@@ -18,25 +18,28 @@ import EsForm from "@/components/Essential/EsForm.vue"
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "InputNumber",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const inputNumber = ref(0)
+    const value = reactive({ inputNumberValue: inputNumber })
     return {
       listQuery: value,
-      formItem: [
+      formItem: ref([
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
+          type: 'es-input-number',
+          label: 'Input Number',
+          key: 'inputNumberValue',
           col: 24,
-          width: '100px',
+          width: '120px',
           attrs: {
+            showWordLimit: true,
+            disabled: false,
             placeholder: '请输入',
+            clearable: true
           },
           listeners: {
             'input': (val:any) => {
@@ -44,12 +47,12 @@ export default {
             }
           }
         }
-      ],
-      rules: {
-        inputValue: [
+      ]),
+      rules: ref({
+        inputNumberValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      }
+      })
     }
   }
 };

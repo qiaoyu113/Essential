@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="Input clearable属性"
     >
       <es-form
         ref="EsForm"
@@ -37,6 +37,7 @@ export default {
           width: '100px',
           attrs: {
             placeholder: '请输入',
+            clearable: true // 配置clearable实现一键清空
           },
           listeners: {
             'input': (val:any) => {

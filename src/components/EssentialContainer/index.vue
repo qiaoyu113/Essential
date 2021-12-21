@@ -19,7 +19,7 @@ export default {
     title: null,
     md: null
   },
-  data() {
+  setup() {
     return {
       isPC: true  
     }
