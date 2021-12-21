@@ -97,5 +97,8 @@ pre {
   justify-content: center;
   align-items: center;
   border-top: 1px dashed #e7e7e7;
+  span {
+    cursor: pointer;
+  }
 }
 </style>

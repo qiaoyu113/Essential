@@ -6,10 +6,10 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# Radio组件
+# InputNumber组件
 
 ### 示例
-<Preview comp-name="Radio" demo-name="demo">
+<Preview comp-name="InputNumber" demo-name="demo">
   <demo />
 </Preview>
 

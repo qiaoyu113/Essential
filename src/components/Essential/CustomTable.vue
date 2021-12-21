@@ -67,7 +67,7 @@
                   v-for="(sub,index) in item.moreOp"
                   :key="'dropdown-'+sub.value+index"
                   :command="sub.value"
-                  v-bind="sub.tagAttrs || {}"
+                  v-bind="sub.attrs || {}"
                 >
                   <template v-if="isPC">
                     {{ sub.label }}

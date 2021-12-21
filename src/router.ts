@@ -20,6 +20,18 @@
     name: 'Essential',
     path: '/components/Introduce',
     component: () => import('packages/Essential/docs/README.md'),
+  },
+  {
+    title: '安装',
+    name: 'Install',
+    path: '/components/Install',
+    component: () => import('packages/Install/docs/README.md'),
+  },
+  {
+    title: '快速上手',
+    name: 'Start',
+    path: '/components/Start',
+    component: () => import('packages/Start/docs/README.md'),
   },{
     title: '按钮',
     name: 'Button',
@@ -31,17 +43,57 @@
     path: '/components/Foo',
     component: () => import('packages/Foo/docs/README.md'),
   },{
+    title: 'Form',
+    name: 'Form',
+    path: '/components/Form',
+    component: () => import('packages/Form/docs/README.md'),
+  },{
     title: 'Input组件',
     name: 'Input',
     path: '/components/Input',
     component: () => import('packages/Input/docs/README.md'),
   },{
+    title: 'InputNumber组件',
+    name: 'InputNumber',
+    path: '/components/InputNumber',
+    component: () => import('packages/InputNumber/docs/README.md'),
+  },{
     title: 'Radio组件',
     name: 'Radio',
     path: '/components/Radio',
     component: () => import('packages/Radio/docs/README.md'),
+  },{
+    title: 'Rate组件',
+    name: 'Rate',
+    path: '/components/Rate',
+    component: () => import('packages/Rate/docs/README.md'),
+  },{
+    title: 'Select组件',
+    name: 'Select',
+    path: '/components/Select',
+    component: () => import('packages/Select/docs/README.md'),
+  },{
+    title: 'VirtualizedSelect组件',
+    name: 'VirtualizedSelect',
+    path: '/components/VirtualizedSelect',
+    component: () => import('packages/VirtualizedSelect/docs/README.md'),
+  },{
+    title: 'Slider组件',
+    name: 'Slider',
+    path: '/components/Slider',
+    component: () => import('packages/Slider/docs/README.md'),
+  },{
+    title: 'Switch组件',
+    name: 'Switch',
+    path: '/components/Switch',
+    component: () => import('packages/Switch/docs/README.md'),
+  },{
+    title: 'CheckBox组件',
+    name: 'CheckBox',
+    path: '/components/CheckBox',
+    component: () => import('packages/CheckBox/docs/README.md'),
   }];
- 
+  
  const routerConfig = {
    history: createWebHashHistory(),
    routes,

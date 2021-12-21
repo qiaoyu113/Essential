@@ -19,7 +19,7 @@ export default {
     title: null,
     md: null
   },
-  data() {
+  setup() {
     return {
       isPC: true  
     }
@@ -72,7 +72,7 @@ export default {
             top: 0;
             bottom: 0;
             margin: auto;
-            background-image: linear-gradient(270deg, #FF9600 0%, #FFB400 100%);
+            background-image: linear-gradient(270deg, #79BAF8 0%, #1695FA 100%);
             border-radius: 2.5px;
             border-radius: 2.5px;
             display: inline-block;

@@ -13,7 +13,7 @@
       :before-upload="beforeAvatarUpload"
       :on-remove="handleRemove"
       :on-exceed="handleExceed"
-      v-bind="tagAttrs"
+      v-bind="attrs"
       v-on="listeners"
     >
       <i class="el-icon-plus" />
@@ -34,7 +34,7 @@ export default class extends Vue {
   @Prop({ default: () => 6 }) limit: any
   @Prop({ default: () => false }) multiple: any
   @Prop({ default: () => true }) show: any
-  @Prop({ default: () => {} }) tagAttrs: any
+  @Prop({ default: () => {} }) attrs: any
   @Prop({ default: () => {} }) listeners: any
   private imageUrl: any = []
   private dialogVisible = false
