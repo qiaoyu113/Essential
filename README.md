@@ -15,7 +15,7 @@ Essential 是一款结合Element plus + Vue3开发的快速页面生成组件库
 | Team Member | E-mail |
 | ------ | ------ |
 | 张惠惠 |  |
-| 王云芳 |  |
+| 王云芳 |  | 
 
 
 `build:lib` 的产物：
