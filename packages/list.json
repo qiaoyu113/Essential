@@ -8,8 +8,22 @@
     "compZhName": "介绍"
   },
   {
+    "compName": "Install",
+    "compZhName": "安装"
+  },
+  {
+    "compName": "Start",
+    "compZhName": "快速上手"
+  },
+  {
     "compName": "Meau",
     "compZhName": "组件"
+  },
+  {
+    "compName": "Form",
+    "compZhName": "Form",
+    "compDesc": "Form组件",
+    "compClassName": "form"
   },
   {
     "compName": "Input",
@@ -18,9 +32,51 @@
     "compClassName": "input"
   },
   {
+    "compName": "InputNumber",
+    "compZhName": "Input Number",
+    "compDesc": "InputNumber组件",
+    "compClassName": "inputNumber"
+  },
+  {
     "compName": "Radio",
     "compZhName": "Radio",
     "compDesc": "Radio组件",
     "compClassName": "radio"
+  },
+  {
+    "compName": "Rate",
+    "compZhName": "Rate",
+    "compDesc": "Rate组件",
+    "compClassName": "rate"
+  },
+  {
+    "compName": "Select",
+    "compZhName": "Select",
+    "compDesc": "Select组件",
+    "compClassName": "select"
+  },
+  {
+    "compName": "VirtualizedSelect",
+    "compZhName": "Virtualized Select",
+    "compDesc": "VirtualizedSelect组件",
+    "compClassName": "virtualizedSelect"
+  },
+  {
+    "compName": "Slider",
+    "compZhName": "Slider",
+    "compDesc": "Slider组件",
+    "compClassName": "slider"
+  },
+  {
+    "compName": "Switch",
+    "compZhName": "Switch",
+    "compDesc": "Switch组件",
+    "compClassName": "switch"
+  },
+  {
+    "compName": "CheckBox",
+    "compZhName": "CheckBox",
+    "compDesc": "CheckBox组件",
+    "compClassName": "checkbox"
   }
 ]

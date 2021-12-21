@@ -4,7 +4,7 @@
       v-model="cascaders"
       :props="props"
       :options="cascaderOptions"
-      v-bind="tagAttrs"
+      v-bind="attrs"
       v-on="listeners"
     />
   </div>
@@ -19,11 +19,11 @@ export default class extends Vue {
   // @Prop({ default: [] }) private cascader: any
   @Prop({ default: '请选择地区' }) private placeholder?:string
   @Prop({ default: 1 }) private zindex!:number
-  @Prop({ default: () => {} }) tagAttrs: any
+  @Prop({ default: () => {} }) attrs: any
   @Prop({ default: () => {} }) listeners: any
   private cascaders:any = []
   private props:any = {
-    multiple: this['tagAttrs'].multiple,
+    multiple: this['attrs'].multiple,
     lazy: true,
     lazyLoad: this.lazyLoad
   }
@@ -67,9 +67,9 @@ export default class extends Vue {
   @Watch('cascaders')
   private cascadersWatch(newVal: any, oldVal: any) {
     console.log('newVal', newVal, 'oldVal', oldVal)
-    if (this['tagAttrs']['multiple-limit'] && newVal.length > this['tagAttrs']['multiple-limit']) {
+    if (this['attrs']['multiple-limit'] && newVal.length > this['attrs']['multiple-limit']) {
       this.$message({
-        message: '最多只支持选择' + this['tagAttrs']['multiple-limit'] + '项',
+        message: '最多只支持选择' + this['attrs']['multiple-limit'] + '项',
         duration: 1500,
         type: 'warning'
       })

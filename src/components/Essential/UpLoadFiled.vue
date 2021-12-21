@@ -10,7 +10,7 @@
       :before-upload="beforeAvatarUpload"
       :on-remove="handleRemove"
       :on-exceed="handleExceed"
-      v-bind="tagAttrs"
+      v-bind="attrs"
       v-on="listeners"
     >
       <!-- 2021-11-26 zhh 修改按钮文案+tip -->
@@ -49,7 +49,7 @@ export default class extends Vue {
   @Prop({ default: () => true }) tip: any
   @Prop({ default: () => '上传' }) butText: any
   @Prop({ default: () => true }) show: any
-  @Prop({ default: () => {} }) tagAttrs: any
+  @Prop({ default: () => {} }) attrs: any
   @Prop({ default: () => {} }) listeners: any
   private imageUrl: any = []
   private dialogVisible = false
@@ -161,8 +161,8 @@ export default class extends Vue {
   }
 
   private mounted() {
-    if (this.tagAttrs['file-list']) {
-      this.imageUrl = this.tagAttrs['file-list']
+    if (this.attrs['file-list']) {
+      this.imageUrl = this.attrs['file-list']
     }
   }
 }

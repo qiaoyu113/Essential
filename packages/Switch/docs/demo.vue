@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="Switch组件"
     >
       <es-form
         ref="EsForm"
@@ -15,41 +15,46 @@
 <script lang="ts">
 import EsContainer from "@/components/EssentialContainer/index.vue";
 import EsForm from "@/components/Essential/EsForm.vue"
+import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "Switch",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const switchs = ref(false)
+    const value = reactive({ switchValue: switchs })
     return {
       listQuery: value,
-      formItem: [
+      formItem: ref([
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
+          type: 'es-switch',
+          label: 'Switch',
+          key: 'switchValue',
           col: 24,
-          width: '100px',
           attrs: {
-            placeholder: '请输入',
+            'active-color': "#13ce66",
+            'inactive-color': "#ff4949",
+            'style': 'margin-top: 10px;'
           },
           listeners: {
-            'input': (val:any) => {
-              console.log('输入内容：' + val)
+            'change': (val:any) => {
+              ElMessage({
+                message: '已操作：' + val,
+                type: 'success'
+              });
             }
           }
         }
-      ],
-      rules: {
-        inputValue: [
+      ]),
+      rules: ref({
+        switchValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      }
+      })
     }
   }
 };

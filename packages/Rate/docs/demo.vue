@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="Rate组件"
     >
       <es-form
         ref="EsForm"
@@ -15,41 +15,47 @@
 <script lang="ts">
 import EsContainer from "@/components/EssentialContainer/index.vue";
 import EsForm from "@/components/Essential/EsForm.vue"
+import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "Rate",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const rate = ref(0)
+    const value = reactive({ rateValue: rate })
     return {
       listQuery: value,
-      formItem: [
+      formItem: ref([
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
+          type: 'es-rate',
+          label: 'Rate',
+          key: 'rateValue',
           col: 24,
           width: '100px',
           attrs: {
-            placeholder: '请输入',
+            'show-score': true,
+            'allow-half': true,
+            'style': 'line-height: 2.5;'
           },
           listeners: {
-            'input': (val:any) => {
-              console.log('输入内容：' + val)
+            'change': (val:any) => {
+              ElMessage({
+                message: '已经选中：' + val,
+                type: 'success'
+              });
             }
           }
         }
-      ],
-      rules: {
-        inputValue: [
+      ]),
+      rules: ref({
+        rateValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      }
+      })
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Radio组件"
+      title="Checkbox组件"
     >
       <es-form
         ref="EsForm"
@@ -19,33 +19,29 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "radio",
+  name: "Checkbox",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const radio = ref(false)
-    const value = reactive({ RadioValue: radio })
+    const switchs = ref([])
+    const value = reactive({ CheckboxValue: switchs })
+    const options = [
+      { label: '选项1', value: 1 },
+      { label: '选项2', value: 2 },
+      { label: '选项3', value: 3 }
+    ]
     return {
       listQuery: value,
       formItem: [
           {
-            type: 'es-radio',
-            label: 'Radio',
-            key: 'RadioValue',
+            type: 'es-checkbox',
+            label: 'checkbox',
+            key: 'CheckboxValue',
             col: 24,
             width: '100px',
-            options: [
-              {
-                label: '选择1',
-                value: 1
-              },
-              {
-                label: '选择2',
-                value: 2
-              }
-            ],
+            options: options,
             listeners: {
               'change': (val:any) => {
                 ElMessage({
@@ -57,7 +53,7 @@ export default {
           }
       ],
       rules: {
-        RadioValue: [
+        CheckboxValue: [
           { required: true, message: '请选择', trigger: 'change' }
         ]
       }

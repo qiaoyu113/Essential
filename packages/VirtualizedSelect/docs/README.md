@@ -6,10 +6,15 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# Radio组件
+# Virtualized Select组件
 
 ### 示例
-<Preview comp-name="Radio" demo-name="demo">
+<Preview comp-name="VirtualizedSelect" demo-name="demo">
+  <demo />
+</Preview>
+
+### 示例
+<Preview comp-name="VirtualizedSelect" demo-name="demo">
   <demo />
 </Preview>
 
