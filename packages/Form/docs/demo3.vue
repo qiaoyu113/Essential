@@ -43,7 +43,6 @@ export default {
           label: 'Input',
           key: 'inputValue',
           col: 24,
-          width: '100px',
           attrs: {
             placeholder: '请输入',
           },
@@ -58,7 +57,6 @@ export default {
           label: 'Radio',
           key: 'RadioValue',
           col: 12,
-          width: '100px',
           options: [
             {
               label: '选择1',
@@ -83,7 +81,6 @@ export default {
           label: 'checkbox',
           key: 'CheckboxValue',
           col: 12,
-          width: '100px',
           options: options,
           listeners: {
             'change': (val:any) => {

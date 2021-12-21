@@ -32,8 +32,7 @@ export default {
     })
     const options = [
       { label: '选项1', value: 1 },
-      { label: '选项2', value: 2 },
-      { label: '选项3', value: 3 }
+      { label: '选项2', value: 2 }
     ]
     return {
       listQuery: listQuery,
@@ -43,7 +42,6 @@ export default {
           label: 'Input',
           key: 'inputValue',
           col: 8,
-          width: '100px',
           attrs: {
             placeholder: '请输入',
           },
@@ -58,17 +56,7 @@ export default {
           label: 'Radio',
           key: 'RadioValue',
           col: 8,
-          width: '100px',
-          options: [
-            {
-              label: '选择1',
-              value: 1
-            },
-            {
-              label: '选择2',
-              value: 2
-            }
-          ],
+          options: options,
           listeners: {
             'change': (val:any) => {
               ElMessage({
@@ -83,7 +71,6 @@ export default {
           label: 'checkbox',
           key: 'CheckboxValue',
           col: 8,
-          width: '100px',
           options: options,
           listeners: {
             'change': (val:any) => {
