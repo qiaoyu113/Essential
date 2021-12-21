@@ -16,7 +16,7 @@ Essential 是一款结合Element plus + Vue3开发的快速页面生成组件库
 
 | Team Member | E-mail |
 | ------ | ------ |
-| 张惠惠 |  |
+| 张慧慧 | 1191213054@qq.com |
 | 王云芳 |  |
 
 
