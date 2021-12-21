@@ -8,6 +8,14 @@
     "compZhName": "介绍"
   },
   {
+    "compName": "Install",
+    "compZhName": "安装"
+  },
+  {
+    "compName": "Start",
+    "compZhName": "快速上手"
+  },
+  {
     "compName": "Meau",
     "compZhName": "组件"
   },

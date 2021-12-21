@@ -4,9 +4,8 @@
     >
       <es-form
         ref="EsForm"
-        :list-query="ruleForm"
+        :list-query="listQuery"
         :form-item="formItem"
-        label-width="100px"
         :rules="rules"
       >
       </es-form>
@@ -24,7 +23,7 @@ export default {
   },
   data() {
     return {
-      ruleForm: {
+      listQuery: {
           RadioValue: ''
       },
       formItem: [
@@ -46,7 +45,10 @@ export default {
             ],
             listeners: {
               'change': (val:any) => {
-                alert('已经选中：' + val)
+                this.$message({
+                  message: '已经选中：' + val,
+                  type: 'success'
+                });
               }
             }
           }

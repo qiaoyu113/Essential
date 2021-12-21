@@ -1,5 +1,7 @@
 # Essential
 
+### 介绍
+---
 
 Essential 是一款结合Element plus + Vue3开发的快速页面生成组件库，与ElementUI不同的是，不需要写过多的view层，只需要通过js代码便实现ElementUI的所有表单。
 
@@ -12,7 +14,7 @@ Essential 是一款结合Element plus + Vue3开发的快速页面生成组件库
 
 | Author | E-mail |
 | ------ | ----- |
-| 乔宇 | 527324363@qq.com |
+| [@乔宇(Joey)](http://github.com/qiaoyu113) | 527324363@qq.com |
 
 | Team Member | E-mail |
 | ------ | ------ |

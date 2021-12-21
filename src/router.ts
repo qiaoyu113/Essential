@@ -20,6 +20,18 @@
     name: 'Essential',
     path: '/components/Introduce',
     component: () => import('packages/Essential/docs/README.md'),
+  },
+  {
+    title: '安装',
+    name: 'Install',
+    path: '/components/Install',
+    component: () => import('packages/Install/docs/README.md'),
+  },
+  {
+    title: '快速上手',
+    name: 'Start',
+    path: '/components/Start',
+    component: () => import('packages/Start/docs/README.md'),
   },{
     title: '按钮',
     name: 'Button',
