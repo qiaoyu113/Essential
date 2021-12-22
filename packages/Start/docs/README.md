@@ -2,6 +2,8 @@
 <script setup>
 import Prism from 'prismjs';
 import '@/assets/prism.css';
+import demo from './demo.vue'
+
 </script>
 # Essential
 
@@ -20,13 +22,32 @@ import '@/assets/prism.css';
     <div class="hljs"> 
         <code class="language-javascript line-numbers">
             <p>import Vue from 'vue';</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>import ElementUI from 'element-ui';</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>import Essential from 'es-com';</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>import App from './App.vue';</p>
-            <p>Vue.use(ElementUI);</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>Vue.use(ElementUI).use(Essential);</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p style="padding: 10px;"> </p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>new Vue({</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>el: '#app',</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>render: h => h(App)</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>});</p>
         </code>
     </div>
@@ -41,6 +62,14 @@ import '@/assets/prism.css';
             border-radius: 4px;
             -webkit-font-smoothing: auto;
         }
+        p {
+            display: block;
+        }
     </style>
 </pre>
 
+### 使用方法
+成功引入整个 Essential后，就可以直接使用啦！（请点击`查看代码`进行查看）
+<Preview comp-name="Start" demo-name="demo">
+  <demo />
+</Preview>
