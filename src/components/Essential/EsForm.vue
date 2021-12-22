@@ -42,6 +42,13 @@
             v-bind="item.attrs || {}"
             v-on="item.listeners"
           />
+          <!-- 自动补全输入框 -->
+          <el-autocomplete
+            v-if="item.type === 'es-autocomplete'"
+            v-model.trim="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
           <!-- radio -->
           <el-radio-group
             v-else-if="item.type === 'es-radio'"
