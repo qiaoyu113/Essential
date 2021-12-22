@@ -33,7 +33,7 @@ export default {
           type: 'es-input',
           label: 'Input',
           key: 'inputValue',
-          col: 24,
+          col: 8,
           width: '100px',
           attrs: {
             placeholder: '请输入',

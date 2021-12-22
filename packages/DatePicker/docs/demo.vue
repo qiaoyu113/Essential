@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="DatePicker组件"
     >
       <es-form
         ref="EsForm"
@@ -15,39 +15,43 @@
 <script lang="ts">
 import EsContainer from "@/components/EssentialContainer/index.vue";
 import EsForm from "@/components/Essential/EsForm.vue"
+import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "DatePicker",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const date = ref('')
+    const value = reactive({ DatePickerValue: date })
     return {
       listQuery: value,
       formItem: [
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
-          col: 28,
-          width: '100px',
+          type: 'es-date-picker',
+          label: 'DatePicker',
+          key: 'DatePickerValue',
+          col: 12,
           attrs: {
-            placeholder: '请输入',
+            'placeholder': '请选择',
+            'type': 'date'
           },
           listeners: {
-            'input': (val:any) => {
-              console.log('输入内容：' + val)
+            'change': (val:any) => {
+              ElMessage({
+                message: '已经选中：' + val,
+                type: 'success'
+              });
             }
           }
         }
       ],
       rules: {
-        inputValue: [
-          { required: true, message: '不能为空', trigger: 'change' }
+        DatePickerValue: [
+          { required: true, message: '请选择', trigger: 'change' }
         ]
       }
     }

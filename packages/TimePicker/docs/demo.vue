@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="TimePicker组件"
     >
       <es-form
         ref="EsForm"
@@ -15,39 +15,45 @@
 <script lang="ts">
 import EsContainer from "@/components/EssentialContainer/index.vue";
 import EsForm from "@/components/Essential/EsForm.vue"
+import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "TimePicker",
   components: {
     EsContainer,
     EsForm
   },
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const time = ref(new Date(2016, 9, 10, 18, 40))
+    const value = reactive({ TimePickerValue: time })
     return {
       listQuery: value,
       formItem: [
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
-          col: 28,
+          type: 'es-time-picker',
+          label: 'TimePicker',
+          key: 'TimePickerValue',
+          col: 12,
           width: '100px',
           attrs: {
-            placeholder: '请输入',
+            'start': '08:30',
+            'step': '00:30',
+            'end': '18:30'
           },
           listeners: {
-            'input': (val:any) => {
-              console.log('输入内容：' + val)
+            'change': (val:any) => {
+              ElMessage({
+                message: '已经选中：' + val,
+                type: 'success'
+              });
             }
           }
         }
       ],
       rules: {
-        inputValue: [
-          { required: true, message: '不能为空', trigger: 'change' }
+        TimePickerValue: [
+          { required: true, message: '请选择', trigger: 'change' }
         ]
       }
     }

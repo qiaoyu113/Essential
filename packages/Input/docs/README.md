@@ -16,12 +16,12 @@ import demo3 from './demo3.vue'
 </Preview>
 
 ### 禁用状态
-<Preview comp-name="Input" demo-name="demo">
+<Preview comp-name="Input" demo-name="demo2">
   <demo2 />
 </Preview>
 
 ### 一键清空
-<Preview comp-name="Input" demo-name="demo">
+<Preview comp-name="Input" demo-name="demo3">
   <demo3 />
 </Preview>
 
