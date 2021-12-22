@@ -1,4 +1,8 @@
 <template>
+<!--
+    EsContainer: 最外层UI组件
+    EsForm: 核心表单组件（包含所有组件，告别view层反复编写）
+-->
   <EsContainer
       title="Essential 基础用法"
     >
