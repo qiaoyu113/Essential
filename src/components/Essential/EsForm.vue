@@ -199,17 +199,16 @@
 import { ref, defineComponent } from 'vue'
 // import UpLoad from '@/components/Essential/UpLoad.vue'
 // import UpLoadFiled from '@/components/Essential/UpLoadFiled.vue'
-import { DataIsNull } from '../../utils/index'
 
 export default defineComponent ({
-  name: "customForm",
+  name: "EsForm",
   components: {
     // UpLoad
     // UpLoadFiled
   },
   props: {
     msg: String,
-    listQuery: Object,
+    listQuery: null,
     formItem: null,
     pcCol:Number,
     rules:Object,

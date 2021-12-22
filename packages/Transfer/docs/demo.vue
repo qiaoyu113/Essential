@@ -2,28 +2,25 @@
   <EsContainer
       title="Transfer组件"
     >
-      <es-form
+      <EsForm
         ref="EsForm"
         :list-query="listQuery"
         :form-item="formItem"
         :rules="rules"
       >
-      </es-form>
+      </EsForm>
   </EsContainer>
 </template>
 
 <script lang="ts">
 import EsContainer from "@/components/EssentialContainer/index.vue"
-import EsForm from "@/components/Essential/EsForm.vue"
+
 import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
   name: "Transfer",
-  components: {
-    EsContainer,
-    EsForm
-  },
+  
   data() {
     const generateData = () => {
       const data = []
