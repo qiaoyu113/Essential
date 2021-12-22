@@ -2,27 +2,23 @@
   <EsContainer
       title="Input组件"
     >
-      <es-form
+      <EsForm
         ref="EsForm"
         :list-query="listQuery"
         :form-item="formItem"
         :rules="rules"
       >
-      </es-form>
+      </EsForm>
   </EsContainer>
 </template>
 
 <script lang="ts">
-import EsContainer from "@/components/EssentialContainer/index.vue";
-import EsForm from "@/components/Essential/EsForm.vue"
+
 import { ref, reactive } from 'vue'
 
 export default {
   name: "InputNumber",
-  components: {
-    EsContainer,
-    EsForm
-  },
+  
   setup() {
     const inputNumber = ref(0)
     const value = reactive({ inputNumberValue: inputNumber })
