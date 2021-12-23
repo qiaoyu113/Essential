@@ -9,7 +9,7 @@
     </div>
 
     <div class="preview-bottom">
-      <span name="Code" @click="showSourceCode">查看代码</span>
+      <span name="Code" @click="showSourceCode">{{ this.codeVisible ? '关闭' : '查看代码' }}</span>
     </div>
   </div>
 </template>

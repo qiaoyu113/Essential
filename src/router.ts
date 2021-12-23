@@ -117,6 +117,16 @@
     name: 'Transfer',
     path: '/components/Transfer',
     component: () => import('packages/Transfer/docs/README.md'),
+  },{
+    title: 'EsContainer组件',
+    name: 'EsContainer',
+    path: '/components/EsContainer',
+    component: () => import('packages/EsContainer/docs/README.md'),
+  },{
+    title: 'EsItem组件',
+    name: 'EsItem',
+    path: '/components/EsItem',
+    component: () => import('packages/EsItem/docs/README.md'),
   }];
   
  const routerConfig = {
