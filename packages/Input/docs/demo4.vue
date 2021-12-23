@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input 基础用法"
+      title="Input showPassword属性"
     >
       <EsForm
         ref="EsForm"
@@ -31,6 +31,7 @@ export default {
           width: '100px',
           attrs: {
             placeholder: '请输入',
+            showPassword: true // 配置show-password得到一个可切换显示隐藏的密码框
           },
           listeners: {
             'input': (val:any) => {

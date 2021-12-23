@@ -3,6 +3,10 @@
 import demo from './demo.vue'
 import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
+import demo7 from './demo7.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -23,6 +27,26 @@ import demo3 from './demo3.vue'
 ### 一键清空
 <Preview comp-name="Input" demo-name="demo3">
   <demo3 />
+</Preview>
+
+### 密码类型的输入框
+<Preview comp-name="Input" demo-name="demo4">
+  <demo4 />
+</Preview>
+
+### 自动补全输入框
+<Preview comp-name="Input" demo-name="demo5">
+  <demo5 />
+</Preview>
+
+### 远程搜索
+<Preview comp-name="Input" demo-name="demo6">
+  <demo6 />
+</Preview>
+
+### 自定义建议模板
+<Preview comp-name="Input" demo-name="demo7">
+  <demo7 />
 </Preview>
 
 ### attrs属性
