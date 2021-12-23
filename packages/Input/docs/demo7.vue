@@ -49,55 +49,42 @@ export default {
     const handleSelect = (item: any) => {
       console.log('选中的值', item.value)
     }
+    const handleIconClick = (ev: any) => {
+      console.log('点击icon', ev)
+    }
     onMounted(() => {
       (restaurants.value as any) = loadAll()
     })
     /**
      * 组件生成
      */
-    const listQuery: Record<string, any> = reactive({ inputValue: '', inputValue2: '' })
+    const listQuery: Record<string, any> = reactive({ inputValue: '' })
     const formItem: unknown[] = [
         {
           type: 'es-autocomplete',
-          label: 'AutoFocus',
+          label: 'InputSlot',
           key: 'inputValue',
           col: 12,
-          width: '100px',
+          width: '140px',
+          suffix: true, // Input 插槽
+          default: true, // Input 插槽
           attrs: {
             placeholder: '请输入',
-            fetchSuggestions: querySearch // 配置返回建议输入的方法
+            fetchSuggestions: querySearch // 配置远程搜索的方法
           },
           listeners: {
             'input': (val:any) => {
               console.log('输入内容：' + val)
             },
             'select': handleSelect
-          }
-        },
-        {
-          type: 'es-autocomplete',
-          label: 'OnFocus',
-          key: 'inputValue2',
-          col: 12,
-          width: '100px',
-          attrs: {
-            placeholder: '请输入',
-            fetchSuggestions: querySearch,
-            triggerOnFocus: false // 是否在输入框 focus 时显示建议列表
           },
-          listeners: {
-            'input': (val:any) => {
-              console.log('输入内容2：' + val)
-            },
-            'select': handleSelect
+          listenersIcon: {
+            'click': handleIconClick
           }
         }
     ]
     const rules: Object = {
         inputValue: [
-            { required: true, message: '不能为空', trigger: 'change' }
-        ],
-        inputValue2: [
             { required: true, message: '不能为空', trigger: 'change' }
         ]
     }

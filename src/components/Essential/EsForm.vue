@@ -48,7 +48,17 @@
             v-model.trim="listQuery[item.key]"
             v-bind="item.attrs || {}"
             v-on="item.listeners"
-          />
+          >
+            <template v-if="item.suffix" #suffix>
+              <el-icon class="el-input__icon" v-on="item.listenersIcon || {}">
+                <edit />
+              </el-icon>
+            </template>
+            <template v-if="item.default" #default="{ item }">
+              <div class="value">{{ item.value }}</div>
+              <span class="link">{{ item.link }}</span>
+            </template>
+          </el-autocomplete>
           <!-- radio -->
           <el-radio-group
             v-else-if="item.type === 'es-radio'"
@@ -204,12 +214,14 @@
 </template>
 <script set lang="ts">
 import { ref, defineComponent } from 'vue'
+import { Edit } from '@element-plus/icons-vue'
 // import UpLoad from '@/components/Essential/UpLoad.vue'
 // import UpLoadFiled from '@/components/Essential/UpLoadFiled.vue'
 
 export default defineComponent ({
   name: "EsForm",
   components: {
+    Edit
     // UpLoad
     // UpLoadFiled
   },

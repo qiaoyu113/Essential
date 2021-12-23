@@ -30,7 +30,7 @@ export default {
           type: 'es-input',
           label: 'Input',
           key: 'inputValue',
-          col: 8,
+          col: 12,
           width: '100px',
           attrs: {
             disabled: true, // 配置disabled达到禁用

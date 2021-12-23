@@ -22,13 +22,18 @@ export default {
      * 基础数据生成
      */
     const restaurants = ref([])
-    const querySearch = (queryString: string, cb:Function) => {
+    let timeout:any = null
+    const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
       const results = queryString
         ? restaurants.value.filter(createFilter(queryString))
         : restaurants.value
-      cb(results)
+
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        cb(results)
+      }, 3000 * Math.random())
     }
-    const createFilter = (queryString: any) => {
+    const createFilter = (queryString: string) => {
       return (restaurant:any) => {
         return (
           restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
@@ -55,17 +60,17 @@ export default {
     /**
      * 组件生成
      */
-    const listQuery: Record<string, any> = reactive({ inputValue: '', inputValue2: '' })
+    const listQuery: Record<string, any> = reactive({ inputValue: '' })
     const formItem: unknown[] = [
         {
           type: 'es-autocomplete',
-          label: 'AutoFocus',
+          label: 'AutoFocusAsync',
           key: 'inputValue',
           col: 12,
-          width: '100px',
+          width: '140px',
           attrs: {
             placeholder: '请输入',
-            fetchSuggestions: querySearch // 配置返回建议输入的方法
+            fetchSuggestions: querySearchAsync // 配置远程搜索的方法
           },
           listeners: {
             'input': (val:any) => {
@@ -73,31 +78,10 @@ export default {
             },
             'select': handleSelect
           }
-        },
-        {
-          type: 'es-autocomplete',
-          label: 'OnFocus',
-          key: 'inputValue2',
-          col: 12,
-          width: '100px',
-          attrs: {
-            placeholder: '请输入',
-            fetchSuggestions: querySearch,
-            triggerOnFocus: false // 是否在输入框 focus 时显示建议列表
-          },
-          listeners: {
-            'input': (val:any) => {
-              console.log('输入内容2：' + val)
-            },
-            'select': handleSelect
-          }
         }
     ]
     const rules: Object = {
         inputValue: [
-            { required: true, message: '不能为空', trigger: 'change' }
-        ],
-        inputValue2: [
             { required: true, message: '不能为空', trigger: 'change' }
         ]
     }

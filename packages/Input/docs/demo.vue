@@ -27,7 +27,7 @@ export default {
           type: 'es-input',
           label: 'Input',
           key: 'inputValue',
-          col: 28,
+          col: 12,
           width: '100px',
           attrs: {
             placeholder: '请输入',
