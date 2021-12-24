@@ -127,6 +127,11 @@
     name: 'EsItem',
     path: '/components/EsItem',
     component: () => import('packages/EsItem/docs/README.md'),
+  },{
+    title: 'EsTable组件',
+    name: 'EsTable',
+    path: '/components/EsTable',
+    component: () => import('packages/EsTable/docs/README.md'),
   }];
   
  const routerConfig = {

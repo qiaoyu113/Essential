@@ -124,5 +124,15 @@
     "compZhName": "EsItem",
     "compDesc": "EsItem组件",
     "compClassName": "EsItem"
+  },
+  {
+    "compName": "Meau",
+    "compZhName": "Table组件"
+  },
+  {
+    "compName": "EsTable",
+    "compZhName": "EsTable",
+    "compDesc": "EsTable组件",
+    "compClassName": "EsTable"
   }
 ]
