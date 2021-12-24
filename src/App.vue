@@ -4,12 +4,14 @@
       <div class="logo">
         <img src="@/assets/logo-long.png" alt="">
       </div>
-      <div v-for="(link, index) in data.links">
-        <div class="meauTitle" v-if="link.path == '/components/Meau'">{{ link.name }}</div>
-        <router-link :class="{active: link.path === $route.path }" v-else :key="index" :to="link.path">{{ link.name }}</router-link>
+      <div class="menu">
+        <div v-for="(link, index) in data.links" @click.native="scollTop">
+          <div class="meauTitle" v-if="link.path == '/components/Meau'">{{ link.name }}</div>
+          <router-link :class="{active: link.path === $route.path }" v-else :key="index" :to="link.path">{{ link.name }}</router-link>
+        </div>
       </div>
     </aside>
-    <main>
+    <main id="main">
       <router-view></router-view>
     </main>
   </div>
@@ -26,6 +28,10 @@ const data = reactive({
     name: item.compZhName
   }))
 })
+
+function scollTop() {
+  document.getElementById("main").scrollTop = 0;
+}
 </script>
 
 <style lang="less">
@@ -34,6 +40,7 @@ body {
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar { width: 0 !important }
 .my-kit-doc {
   display: flex;
   min-height: 100vh;
@@ -47,10 +54,17 @@ body {
     }
   }
   aside {
-    width: 200px;
-    padding: 15px;
+    width: 230px;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
+    .menu {
+      height: calc(100vh - 100px);
+      overflow: scroll;
+      padding-bottom: 30px;
+      padding-right: 10px;
+      box-sizing: border-box;
+    }
     .meauTitle {
       font-size: 16px;
       font-weight: bold;
@@ -71,7 +85,11 @@ body {
   main {
     width: 100%;
     flex: 1;
-    padding: 15px;
+    padding: 0 30px;
+    height: 100vh;
+    overflow: scroll;
+    padding-bottom: 30px;
+    box-sizing: border-box;
   }
 }
 </style>

@@ -49,14 +49,8 @@
             v-bind="item.attrs || {}"
             v-on="item.listeners"
           >
-            <template v-if="item.suffix" #suffix>
-              <el-icon class="el-input__icon" v-on="item.listenersIcon || {}">
-                <edit />
-              </el-icon>
-            </template>
-            <template v-if="item.default" #default="{ item }">
-              <div class="value">{{ item.value }}</div>
-              <span class="link">{{ item.link }}</span>
+            <template v-if="item.slot" v-slot:[item.slot]>
+              <div v-html="item.template"></div>
             </template>
           </el-autocomplete>
           <!-- radio -->

@@ -138,8 +138,7 @@ p,
 blockquote,
 ul,
 ol,
-dl,
-table {
+dl{
     margin: 0.8em 0;
 }
 
