@@ -17,7 +17,7 @@
   },
   {
     "compName": "Meau",
-    "compZhName": "组件"
+    "compZhName": "表单组件"
   },
   {
     "compName": "Form",
@@ -108,5 +108,21 @@
     "compZhName": "Transfer",
     "compDesc": "Transfer组件",
     "compClassName": "transfer"
+  },
+  {
+    "compName": "Meau",
+    "compZhName": "展示组件"
+  },
+  {
+    "compName": "EsContainer",
+    "compZhName": "EsContainer",
+    "compDesc": "EsContainer组件",
+    "compClassName": "EsContainer"
+  },
+  {
+    "compName": "EsItem",
+    "compZhName": "EsItem",
+    "compDesc": "EsItem组件",
+    "compClassName": "EsItem"
   }
 ]

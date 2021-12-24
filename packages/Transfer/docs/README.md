@@ -6,7 +6,7 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# TimeSelect组件
+# Transfer组件
 
 ### 示例
 <Preview comp-name="Transfer" demo-name="demo">
