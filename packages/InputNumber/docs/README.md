@@ -1,6 +1,10 @@
 <!-- 加载 demo 组件 start -->
 <script setup>
 import demo from './demo.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -11,6 +15,26 @@ import demo from './demo.vue'
 ### 示例
 <Preview comp-name="InputNumber" demo-name="demo">
   <demo />
+</Preview>
+
+### 禁用状态
+<Preview comp-name="InputNumber" demo-name="demo2">
+  <demo2 />
+</Preview>
+
+### 步进
+<Preview comp-name="InputNumber" demo-name="demo3">
+  <demo3 />
+</Preview>
+
+### 严格步进
+<Preview comp-name="InputNumber" demo-name="demo4">
+  <demo4 />
+</Preview>
+
+### 精度
+<Preview comp-name="InputNumber" demo-name="demo5">
+  <demo5 />
 </Preview>
 
 ### 属性

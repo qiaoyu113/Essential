@@ -7,6 +7,7 @@ import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
 import demo6 from './demo6.vue'
 import demo7 from './demo7.vue'
+import demo8 from './demo8.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -14,7 +15,7 @@ import demo7 from './demo7.vue'
 
 # Input组件
 
-### 基础用法
+### 示例
 <Preview comp-name="Input" demo-name="demo">
   <demo />
 </Preview>
@@ -48,6 +49,12 @@ import demo7 from './demo7.vue'
 <Preview comp-name="Input" demo-name="demo7">
   <demo7 />
 </Preview>
+
+### 输入长度限制
+<Preview comp-name="Input" demo-name="demo8">
+  <demo8 />
+</Preview>
+
 
 ### attrs属性
 参数 | 说明 | 类型 | 可选值 | 默认值

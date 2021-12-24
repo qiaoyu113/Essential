@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number 基础用法"
+      title="Input Number stepStrictly属性"
     >
       <EsForm
         ref="EsForm"
@@ -33,7 +33,8 @@ export default {
           width: '120px',
           attrs: {
             placeholder: '请输入',
-            showWordLimit: true
+            step: 5,
+            stepStrictly: true,
           },
           listeners: {
             'input': (val:any) => {
