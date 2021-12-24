@@ -40,7 +40,6 @@ body {
   margin: 0;
   padding: 0;
 }
-body::-webkit-scrollbar { width: 0 !important }
 .my-kit-doc {
   display: flex;
   min-height: 100vh;
@@ -65,6 +64,7 @@ body::-webkit-scrollbar { width: 0 !important }
       padding-right: 10px;
       box-sizing: border-box;
     }
+    .menu::-webkit-scrollbar { width: 0 !important }
     .meauTitle {
       font-size: 16px;
       font-weight: bold;
@@ -91,5 +91,6 @@ body::-webkit-scrollbar { width: 0 !important }
     padding-bottom: 30px;
     box-sizing: border-box;
   }
+  main::-webkit-scrollbar { width: 0 !important }
 }
 </style>
