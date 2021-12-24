@@ -17,7 +17,7 @@
   },
   {
     "compName": "Meau",
-    "compZhName": "组件"
+    "compZhName": "表单组件"
   },
   {
     "compName": "Form",
@@ -78,5 +78,51 @@
     "compZhName": "CheckBox",
     "compDesc": "CheckBox组件",
     "compClassName": "checkbox"
+  },
+  {
+    "compName": "TimePicker",
+    "compZhName": "TimePicker",
+    "compDesc": "TimePicker组件",
+    "compClassName": "timepicker"
+  },
+  {
+    "compName": "TimeSelect",
+    "compZhName": "TimeSelect",
+    "compDesc": "TimeSelect组件",
+    "compClassName": "timeselect"
+  },
+  {
+    "compName": "DatePicker",
+    "compZhName": "DatePicker",
+    "compDesc": "DatePicker组件",
+    "compClassName": "datePicker"
+  },
+  {
+    "compName": "DateTimePicker",
+    "compZhName": "DateTimePicker",
+    "compDesc": "DateTimePicker组件",
+    "compClassName": "datetimepicker"
+  },
+  {
+    "compName": "Transfer",
+    "compZhName": "Transfer",
+    "compDesc": "Transfer组件",
+    "compClassName": "transfer"
+  },
+  {
+    "compName": "Meau",
+    "compZhName": "展示组件"
+  },
+  {
+    "compName": "EsContainer",
+    "compZhName": "EsContainer",
+    "compDesc": "EsContainer组件",
+    "compClassName": "EsContainer"
+  },
+  {
+    "compName": "EsItem",
+    "compZhName": "EsItem",
+    "compDesc": "EsItem组件",
+    "compClassName": "EsItem"
   }
 ]

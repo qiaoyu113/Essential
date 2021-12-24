@@ -42,6 +42,23 @@
             v-bind="item.attrs || {}"
             v-on="item.listeners"
           />
+          <!-- 自动补全输入框 -->
+          <el-autocomplete
+            v-if="item.type === 'es-autocomplete'"
+            v-model.trim="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          >
+            <template v-if="item.suffix" #suffix>
+              <el-icon class="el-input__icon" v-on="item.listenersIcon || {}">
+                <edit />
+              </el-icon>
+            </template>
+            <template v-if="item.default" #default="{ item }">
+              <div class="value">{{ item.value }}</div>
+              <span class="link">{{ item.link }}</span>
+            </template>
+          </el-autocomplete>
           <!-- radio -->
           <el-radio-group
             v-else-if="item.type === 'es-radio'"
@@ -117,6 +134,72 @@
               {{ sub.label }}
             </el-checkbox>
           </el-checkbox-group>
+          <!--time-picker-->
+          <el-time-picker
+            v-else-if="item.type === 'es-time-picker'"
+            v-model="listQuery[item.key]"
+            v-bind="item.tagAttrs || {}"
+            v-on="item.listeners"
+          />
+          <!--el-time-select-->
+          <el-time-select
+            v-else-if="item.type === 'es-time-select'"
+            v-model="listQuery[item.key]"
+            v-bind="item.tagAttrs || {}"
+            v-on="item.listeners"
+            />
+          <!--transfer-->
+          <div 
+            style="text-align: center"
+            v-else-if="item.type === 'es-transfer'"
+          >
+            <el-transfer
+              v-model="listQuery[item.key].leftValue"
+              style="text-align: left; display: inline-block"
+              v-bind="item.attrs || {}"
+              v-on="item.listeners"
+            >
+              <template #left-footer>
+                <el-button
+                  class="transfer-footer" 
+                  size="small" 
+                  v-on="item.operationLeft">
+                  {{ item.operationLeftName }}
+                </el-button>
+              </template>
+              <template #right-footer>
+                <el-button
+                  class="transfer-footer" 
+                  size="small" 
+                  v-on="item.operationRight">
+                  {{ item.operationRightName }}
+                </el-button>
+              </template>
+            </el-transfer>
+          </div>
+          <!-- 日期区间控件 -->
+          <el-date-picker
+            v-else-if="item.type === 'es-date-picker'"
+            v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
+          <!--上传-->
+          <!-- <UpLoad
+            v-else-if="item.type === 'es-upload'"
+            ref="UpLoad"
+            v-model="listQuery[item.key]"
+            :limit="item.limit"
+            :multiple="item.multiple"
+            :show="item.show"
+            :tag-attrs="item.tagAttrs || {}"
+            v-on="item.listeners"
+            @success="SuccessUpLoad(item.ref)"
+          >
+            <template>
+              <div v-html="item.template" />
+            </template>
+          </UpLoad> -->
           <slot
             v-else-if="item.slot"
             :name="item.type"
@@ -131,15 +214,20 @@
 </template>
 <script set lang="ts">
 import { ref, defineComponent } from 'vue'
-import { DataIsNull } from '../../utils/index'
+import { Edit } from '@element-plus/icons-vue'
+// import UpLoad from '@/components/Essential/UpLoad.vue'
+// import UpLoadFiled from '@/components/Essential/UpLoadFiled.vue'
 
 export default defineComponent ({
-  name: "customForm",
+  name: "EsForm",
   components: {
+    Edit
+    // UpLoad
+    // UpLoadFiled
   },
   props: {
     msg: String,
-    listQuery: Object,
+    listQuery: null,
     formItem: null,
     pcCol:Number,
     rules:Object,

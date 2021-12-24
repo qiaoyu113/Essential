@@ -92,6 +92,41 @@
     name: 'CheckBox',
     path: '/components/CheckBox',
     component: () => import('packages/CheckBox/docs/README.md'),
+  },{
+    title: 'TimePicker组件',
+    name: 'TimePicker',
+    path: '/components/TimePicker',
+    component: () => import('packages/TimePicker/docs/README.md'),
+  },{
+    title: 'TimeSelect组件',
+    name: 'TimeSelect',
+    path: '/components/TimeSelect',
+    component: () => import('packages/TimeSelect/docs/README.md'),
+  },{
+    title: 'DatePicker组件',
+    name: 'DatePicker',
+    path: '/components/DatePicker',
+    component: () => import('packages/DatePicker/docs/README.md'),
+  },{
+    title: 'DateTimePicker组件',
+    name: 'DateTimePicker',
+    path: '/components/DateTimePicker',
+    component: () => import('packages/DateTimePicker/docs/README.md'),
+  },{
+    title: 'Transfer组件',
+    name: 'Transfer',
+    path: '/components/Transfer',
+    component: () => import('packages/Transfer/docs/README.md'),
+  },{
+    title: 'EsContainer组件',
+    name: 'EsContainer',
+    path: '/components/EsContainer',
+    component: () => import('packages/EsContainer/docs/README.md'),
+  },{
+    title: 'EsItem组件',
+    name: 'EsItem',
+    path: '/components/EsItem',
+    component: () => import('packages/EsItem/docs/README.md'),
   }];
   
  const routerConfig = {

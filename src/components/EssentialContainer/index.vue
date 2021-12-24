@@ -14,24 +14,28 @@
 
 <script lang="ts">
 export default {
-  name: "EssentialContainer",
+  name: "EsContainer",
   props: {
     title: null,
     md: null
   },
-  setup() {
+  data() {
     return {
       isPC: true  
     }
   },
   mounted() {
-    this.isPC = this.isPc()
+    // this.isPC = this.getIsPc()
   },
   methods: {
-    isPc() {
-      // return SettingsModule.isPC
-      return true
-    },
+    // 区分设备
+    getIsPc() {
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        return false
+      } else {
+        return true
+      }
+    }
   }
 };
 </script>

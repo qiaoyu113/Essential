@@ -39,46 +39,10 @@
           <el-input-number
             v-if="item.type === 'es-input-number'"
             v-model.number="listQuery[item.key]"
-            style="width:100%"
             v-bind="item.attrs || {}"
             v-on="item.listeners"
           />
-          <el-input
-            v-if="item.type === 13"
-            v-model.trim="listQuery[item.key]"
-            type="textarea"
-            v-bind="item.attrs || {}"
-            v-on="item.listeners"
-          />
-          <!-- 下拉框 -->
-          <el-select
-            v-else-if="item.type === 2"
-            v-model="listQuery[item.key]"
-            class="el-selects"
-            v-bind="item.attrs || {}"
-            v-on="item.listeners"
-          >
-            <el-option
-              v-for="(sub,index) in item.options"
-              :key="'select-'+sub.value+'-'+index"
-              :style="'max-width:700px'"
-              :label="sub.label"
-              :value="sub.value"
-            />
-          </el-select>
-          <!-- 日期区间控件 -->
-          <el-date-picker
-            v-else-if="item.type ===3"
-            v-model="listQuery[item.key]"
-            :editable="false"
-            v-bind="item.attrs || {}"
-            :type="item.dateType || 'daterange'"
-            :value-format="item.format || 'timestamp'"
-            start-placeholder="开始日期"
-            end-placeholder="结束日期"
-            v-on="item.listeners"
-          />
-
+          <!-- radio -->
           <el-radio-group
             v-else-if="item.type === 'es-radio'"
             v-model="listQuery[item.key]"
@@ -93,10 +57,56 @@
               {{ sub.label }}
             </el-radio>
           </el-radio-group>
-          <el-checkbox-group
-            v-else-if="item.type ===5"
+          <!-- rate -->
+          <el-rate 
+            v-if="item.type === 'es-rate'"
             v-model="listQuery[item.key]"
             v-bind="item.attrs || {}"
+            v-on="item.listeners" 
+          />
+          <!-- select下拉框 -->
+          <el-select
+            v-else-if="item.type === 'es-select'"
+            v-model="listQuery[item.key]"
+            class="el-selects"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          >
+            <el-option
+              v-for="(sub,index) in item.options"
+              :key="'select-'+sub.value+'-'+index"
+              :style="'max-width:700px'"
+              :label="sub.label"
+              :value="sub.value"
+            />
+          </el-select>
+          <!-- selectV2下拉框 -->
+          <el-select-v2
+            v-else-if="item.type === 'es-select-v2'"
+            v-model="listQuery[item.key]"
+            :options="item.options"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
+          <!-- el-slider -->
+          <el-slider
+            v-else-if="item.type === 'es-slider'"
+            v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
+          <!-- el-switch -->
+          <el-switch
+            v-else-if="item.type === 'es-switch'"
+            v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
+          <!-- el-checbox -->
+          <el-checkbox-group
+            v-else-if="item.type === 'es-checkbox'"
+            v-model="listQuery[item.key]"
+            v-bind="item.tagAttrs || {}"
             v-on="item.listeners"
           >
             <el-checkbox
@@ -107,89 +117,72 @@
               {{ sub.label }}
             </el-checkbox>
           </el-checkbox-group>
-          <!-- 选择日期 -->
-          <el-date-picker
-            v-else-if="item.type ===6"
-            v-model="listQuery[item.key]"
-            v-bind="item.attrs || {}"
-            :editable="false"
-            type="date"
-            value-format="timestamp"
-            v-on="item.listeners"
-          />
-          <!-- 显示文本 -->
-          <span
-            v-else-if="item.type ===7"
-            style="padding-left: 10px; color: #333;"
-            v-bind="item.attrs || {}"
-            v-text="canNull(listQuery[item.key],item.isNull)"
-          />
-          <el-cascader
-            v-else-if="item.type ===8"
-            ref="cascader"
-            v-model="listQuery[item.key]"
-            v-bind="item.attrs || {}"
-            :options="item.options"
-            v-on="item.listeners"
-          />
-          <!-- 选择日期时分秒 -->
-          <el-date-picker
-            v-else-if="item.type ===9"
-            v-model="listQuery[item.key]"
-            :editable="false"
-            type="datetime"
-            value-format="timestamp"
-            v-bind="item.attrs || {}"
-            v-on="item.listeners"
-          />
+          <!--time-picker-->
           <el-time-picker
-            v-else-if="item.type ===10"
+            v-else-if="item.type === 'es-time-picker'"
             v-model="listQuery[item.key]"
-            :editable="false"
-            start-placeholder="开始时间"
-            end-placeholder="结束时间"
-            placeholder="选择时间范围"
-            value-format="timestamp"
-            v-bind="item.attrs || {}"
+            v-bind="item.tagAttrs || {}"
             v-on="item.listeners"
           />
-          <el-autocomplete
-            v-else-if="item.type ===11"
+          <!--el-time-select-->
+          <el-time-select
+            v-else-if="item.type === 'es-time-select'"
             v-model="listQuery[item.key]"
-            v-bind="item.attrs || {}"
+            v-bind="item.tagAttrs || {}"
             v-on="item.listeners"
-          />
-          <template
-            v-else-if="item.type ===12"
-          >
-            <el-time-select
-              v-model="listQuery[item.key]"
-              class="timeSelect"
-              v-bind="item.attrs || {}"
-              v-on="item.listeners"
             />
-          </template>
-          <el-popover
-            v-else-if="item.type === 17"
-            placement="right-start"
-            :width="item.width || 240"
-            trigger="focus"
-            :content="item.content"
+          <!--transfer-->
+          <div 
+            style="text-align: center"
+            v-else-if="item.type === 'es-transfer'"
           >
-            <el-select
-              slot="reference"
-              v-model="listQuery[item.key]"
+            <el-transfer
+              v-model="listQuery[item.key].leftValue"
+              style="text-align: left; display: inline-block"
               v-bind="item.attrs || {}"
               v-on="item.listeners"
             >
-              <el-option
-                v-for="(sub,index) in item.options"
-                :key="'select-'+sub.value+'-'+index"
-                :label="sub.label"
-                :value="sub.value"
-              />
-            </el-select>
-          </el-popover>
+              <template #left-footer>
+                <el-button
+                  class="transfer-footer" 
+                  size="small" 
+                  v-on="item.operationLeft">
+                  {{ item.operationLeftName }}
+                </el-button>
+              </template>
+              <template #right-footer>
+                <el-button
+                  class="transfer-footer" 
+                  size="small" 
+                  v-on="item.operationRight">
+                  {{ item.operationRightName }}
+                </el-button>
+              </template>
+            </el-transfer>
+          </div>
+          <!-- 日期区间控件 -->
+          <el-date-picker
+            v-else-if="item.type === 'es-date-picker'"
+            v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          />
+          <!--上传-->
+          <!-- <UpLoad
+            v-else-if="item.type === 'es-upload'"
+            ref="UpLoad"
+            v-model="listQuery[item.key]"
+            :limit="item.limit"
+            :multiple="item.multiple"
+            :show="item.show"
+            :tag-attrs="item.tagAttrs || {}"
+            v-on="item.listeners"
+            @success="SuccessUpLoad(item.ref)"
+          >
+            <template>
+              <div v-html="item.template" />
+            </template>
+          </UpLoad> -->
           <slot
             v-else-if="item.slot"
             :name="item.type"
@@ -204,15 +197,18 @@
 </template>
 <script set lang="ts">
 import { ref, defineComponent } from 'vue'
-import { DataIsNull } from '../../utils/index'
+// import UpLoad from '@/components/Essential/UpLoad.vue'
+// import UpLoadFiled from '@/components/Essential/UpLoadFiled.vue'
 
 export default defineComponent ({
-  name: "customForm",
+  name: "EsForm",
   components: {
+    // UpLoad
+    // UpLoadFiled
   },
   props: {
     msg: String,
-    listQuery: Object,
+    listQuery: null,
     formItem: null,
     pcCol:Number,
     rules:Object,
@@ -263,6 +259,9 @@ export default defineComponent ({
 </style>
 
 <style scoped>
+  .EsForm :deep() .el-form {
+    display: contents;
+  }
   .EsForm :deep() .el-form-item__label {
     font-family: PingFangSC-Regular;
     font-size: 14px;

@@ -1,7 +1,7 @@
 import { App, Plugin } from 'vue';
 import CheckBox from './docs/demo.vue';
 
-export const RadioPlugin: Plugin = {
+export const CheckBoxPlugin: Plugin = {
   install(app: App) {
     app.component('my-checkbox', CheckBox);
   },
