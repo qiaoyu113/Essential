@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number 基础用法"
+      title="Input minlength 和 maxlength属性"
     >
       <EsForm
         ref="EsForm"
@@ -13,26 +13,26 @@
 </template>
 
 <script lang="ts">
-
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "InputNumber",
-  
+  name: "Input",
   setup() {
-    const inputNumber = ref(0)
-    const value = reactive({ inputNumberValue: inputNumber })
+    const input = ref('')
+    const value = reactive({ inputValue: input })
     return {
       listQuery: value,
-      formItem: ref([
+      formItem: [
         {
-          type: 'es-input-number',
-          label: 'Input Number',
-          key: 'inputNumberValue',
-          col: 24,
-          width: '120px',
+          type: 'es-input',
+          label: 'InputLimit',
+          key: 'inputValue',
+          col: 12,
+          width: '100px',
           attrs: {
             placeholder: '请输入',
+            minlength: 0,
+            maxlength: 10,
             showWordLimit: true
           },
           listeners: {
@@ -41,12 +41,12 @@ export default {
             }
           }
         }
-      ]),
-      rules: ref({
-        inputNumberValue: [
+      ],
+      rules: {
+        inputValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      })
+      }
     }
   }
 };

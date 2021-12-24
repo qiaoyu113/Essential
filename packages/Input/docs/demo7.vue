@@ -66,12 +66,12 @@ export default {
           key: 'inputValue',
           col: 12,
           width: '140px',
-          suffix: true, // Input 插槽
-          default: true, // Input 插槽
           attrs: {
             placeholder: '请输入',
             fetchSuggestions: querySearch // 配置远程搜索的方法
           },
+          template: `<span>11</span>`,
+          slot: 'append',
           listeners: {
             'input': (val:any) => {
               console.log('输入内容：' + val)

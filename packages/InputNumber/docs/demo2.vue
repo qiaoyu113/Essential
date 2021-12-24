@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number 基础用法"
+      title="Input Number disabled属性"
     >
       <EsForm
         ref="EsForm"
@@ -33,7 +33,7 @@ export default {
           width: '120px',
           attrs: {
             placeholder: '请输入',
-            showWordLimit: true
+            disabled: true
           },
           listeners: {
             'input': (val:any) => {
