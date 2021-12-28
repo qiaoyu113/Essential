@@ -293,7 +293,7 @@ export default {
 <style scoped>
 
   @media screen and (max-width: 700px){
-    .pagination-container-m >>> .el-pagination {
+    .pagination-container-m :deep() .el-pagination {
       overflow-x: auto;
     }
   }

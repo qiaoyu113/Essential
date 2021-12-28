@@ -262,7 +262,7 @@ export default {
 </style>
 
 <style scoped>
-   .EsTable >>> .emptyText{
+   .EsTable :deep() .emptyText{
      color: aquamarine;
      font-weight: bold;
      font-size: 20px;

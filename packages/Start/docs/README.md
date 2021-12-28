@@ -24,16 +24,16 @@ import demo from './demo.vue'
             <p>import Vue from 'vue';</p>
         </code>
         <code class="language-javascript line-numbers">
-            <p>import ElementUI from 'element-ui';</p>
+            <p>import App from './App.vue';</p>
         </code>
+        <!-- <code class="language-javascript line-numbers">
+            <p>import ElementUI from 'element-ui';</p>
+        </code> -->
         <code class="language-javascript line-numbers">
             <p>import Essential from 'es-com';</p>
         </code>
         <code class="language-javascript line-numbers">
-            <p>import App from './App.vue';</p>
-        </code>
-        <code class="language-javascript line-numbers">
-            <p>Vue.use(ElementUI).use(Essential);</p>
+            <p>Vue.use(Essential);</p>
         </code>
         <code class="language-javascript line-numbers">
             <p style="padding: 10px;"> </p>

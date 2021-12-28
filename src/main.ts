@@ -10,6 +10,7 @@ import 'element-plus/dist/index.css';
 import ElementPlus from 'element-plus';
 import * as Icons from '@element-plus/icons-vue';
 import Essential from './components/index';
+import * as echarts from 'echarts';
 
 const app = createApp(App)
 const IconArr: any = Icons
@@ -18,4 +19,5 @@ Object.keys(Icons).forEach((key: any) => {
     app.component(key, IconArr[key])
 })
 app.component('Preview', Preview)
+app.config.globalProperties.$echarts = echarts
 app.use(MyKit).use(router).use(ElementPlus).use(Essential).mount('#app')
