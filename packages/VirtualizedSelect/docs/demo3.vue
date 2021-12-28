@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Virtualized Select collapseTags属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,33 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
+  name: "SelectV2",
   
   setup() {
-    const select = ref('')
+    const select = ref([])
     const value = reactive({ selectValue: select })
+    const initials = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    const options = ref(
+        Array.from({ length: 1000 }).map((_, idx) => ({
+          value: `Option ${idx + 1}`,
+          label: `${initials[idx % 10]}${idx}`
+        }))
+      )
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
+          type: 'es-select-v2',
+          label: 'CollapseTags',
           key: 'selectValue',
-          col: 12,
-          width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
+          col: 24,
+          width: '110px',
+          options: options,
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            style: 'width: 240px;',
+            multiple: true,
+            collapseTags: true // 设置 collapseTags 实现隐藏多余标签的多选
           },
           listeners: {
             'change': (val:any) => {

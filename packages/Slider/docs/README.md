@@ -1,6 +1,11 @@
 <!-- 加载 demo 组件 start -->
 <script setup>
 import demo from './demo.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -11,6 +16,31 @@ import demo from './demo.vue'
 ### 示例
 <Preview comp-name="Slider" demo-name="demo">
   <demo />
+</Preview>
+
+### 离散值
+<Preview comp-name="Slider" demo-name="demo2">
+  <demo2 />
+</Preview>
+
+### 带有输入框的滑块
+<Preview comp-name="Slider" demo-name="demo3">
+  <demo3 />
+</Preview>
+
+### 范围选择
+<Preview comp-name="Slider" demo-name="demo4">
+  <demo4 />
+</Preview>
+
+### 竖向模式
+<Preview comp-name="Slider" demo-name="demo5">
+  <demo5 />
+</Preview>
+
+### 展示标记
+<Preview comp-name="Slider" demo-name="demo6">
+  <demo6 />
 </Preview>
 
 ### 属性

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input fetchSuggestions属性"
+      title="Input FetchSuggestions属性"
     >
       <EsForm
         ref="EsForm"
@@ -66,7 +66,7 @@ export default {
           type: 'es-autocomplete',
           label: 'AutoFocusAsync',
           key: 'inputValue',
-          col: 12,
+          col: 14,
           width: '140px',
           attrs: {
             placeholder: '请输入',

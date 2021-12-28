@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number Step属性"
+      title="Switch组件 Disabled属性"
     >
       <EsForm
         ref="EsForm"
@@ -14,36 +14,41 @@
 
 <script lang="ts">
 
+import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "InputNumber",
+  name: "Switch",
   
   setup() {
-    const inputNumber = ref(0)
-    const value = reactive({ inputNumberValue: inputNumber })
+    const switchs = ref(false)
+    const value = reactive({ switchValue: switchs })
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-input-number',
-          label: 'Input Number',
-          key: 'inputNumberValue',
+          type: 'es-switch',
+          label: 'Disabled',
+          key: 'switchValue',
           col: 24,
-          width: '120px',
           attrs: {
-            placeholder: '请输入',
-            step: 5
+            'style': 'margin-top: 10px;',
+            'active-color': "#13ce66",
+            'inactive-color': "#ff4949",
+            'disabled': true
           },
           listeners: {
-            'input': (val:any) => {
-              console.log('输入内容：' + val)
+            'change': (val:any) => {
+              ElMessage({
+                message: '已操作：' + val,
+                type: 'success'
+              });
             }
           }
         }
       ]),
       rules: ref({
-        inputNumberValue: [
+        switchValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })

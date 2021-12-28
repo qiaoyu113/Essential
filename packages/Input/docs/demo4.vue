@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input showPassword属性"
+      title="Input ShowPassword属性"
     >
       <EsForm
         ref="EsForm"

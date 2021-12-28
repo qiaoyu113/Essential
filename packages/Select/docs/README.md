@@ -1,6 +1,11 @@
 <!-- 加载 demo 组件 start -->
 <script setup>
 import demo from './demo.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -13,9 +18,29 @@ import demo from './demo.vue'
   <demo />
 </Preview>
 
-### 示例
-<Preview comp-name="Select" demo-name="demo">
-  <demo />
+### 有禁用选项
+<Preview comp-name="Select" demo-name="demo2">
+  <demo2 />
+</Preview>
+
+### 禁用状态
+<Preview comp-name="Select" demo-name="demo3">
+  <demo3 />
+</Preview>
+
+### 可清空单选
+<Preview comp-name="Select" demo-name="demo4">
+  <demo4 />
+</Preview>
+
+### 基础多选
+<Preview comp-name="Select" demo-name="demo5">
+  <demo5 />
+</Preview>
+
+### 自定义模板
+<Preview comp-name="Select" demo-name="demo6">
+  <demo6 />
 </Preview>
 
 ### 属性

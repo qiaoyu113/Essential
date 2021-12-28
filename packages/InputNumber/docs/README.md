@@ -5,6 +5,8 @@ import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
+import demo7 from './demo7.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -36,6 +38,17 @@ import demo5 from './demo5.vue'
 <Preview comp-name="InputNumber" demo-name="demo5">
   <demo5 />
 </Preview>
+
+### 不同的输入框尺寸
+<Preview comp-name="InputNumber" demo-name="demo7">
+  <demo7 />
+</Preview>
+
+### 按钮位置
+<Preview comp-name="InputNumber" demo-name="demo6">
+  <demo6 />
+</Preview>
+
 
 ### 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填

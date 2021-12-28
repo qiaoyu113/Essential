@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input disabled属性"
+      title="Input Disabled属性"
     >
       <EsForm
         ref="EsForm"

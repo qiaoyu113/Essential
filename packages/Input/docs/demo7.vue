@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input fetchSuggestions属性"
+      title="Input FetchSuggestions属性"
     >
       <EsForm
         ref="EsForm"

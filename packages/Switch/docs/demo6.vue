@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Rate组件"
+      title="Switch组件 Loading属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,50 +18,51 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Rate",
+  name: "Switch",
   
   setup() {
-    const rate = ref(0)
-    const value = reactive({ rateValue: rate })
+    const value = reactive({
+        switchValue: false,
+        switchValue2: true
+    })
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-rate',
-          label: 'RateDefault',
-          key: 'rateValue',
+          type: 'es-switch',
+          label: 'Disabled',
+          key: 'switchValue',
           col: 12,
-          width: '100px',
           attrs: {
-            'show-score': true,
-            'allow-half': true,
-            'style': 'line-height: 2.5;'
+            'style': 'margin-top: 10px;',
+            'active-color': "#13ce66",
+            'inactive-color': "#ff4949",
+            'loading': true
           },
           listeners: {
             'change': (val:any) => {
               ElMessage({
-                message: '已经选中：' + val,
+                message: '已操作：' + val,
                 type: 'success'
               });
             }
           }
         },
         {
-          type: 'es-rate',
-          label: 'RateColor',
-          key: 'rateValue',
+          type: 'es-switch',
+          label: 'Disabled',
+          key: 'switchValue2',
           col: 12,
-          width: '100px',
           attrs: {
-            'show-score': true,
-            'allow-half': true,
-            'style': 'line-height: 2.5;',
-            'colors': ['#99A9BF', '#F7BA2A', '#FF9900']
+            'style': 'margin-top: 10px;',
+            'active-color': "#13ce66",
+            'inactive-color': "#ff4949",
+            'loading': true
           },
           listeners: {
             'change': (val:any) => {
               ElMessage({
-                message: '已经选中：' + val,
+                message: '已操作：' + val,
                 type: 'success'
               });
             }
@@ -69,7 +70,10 @@ export default {
         }
       ]),
       rules: ref({
-        rateValue: [
+        switchValue: [
+          { required: true, message: '不能为空', trigger: 'change' }
+        ],
+        switchValue2: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })

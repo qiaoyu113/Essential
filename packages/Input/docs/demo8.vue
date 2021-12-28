@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input minlength 和 maxlength属性"
+      title="Input Minlength和Maxlength属性"
     >
       <EsForm
         ref="EsForm"

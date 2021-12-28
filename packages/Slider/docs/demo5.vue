@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Slider组件 Vertical属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,26 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
-  
+  name: "Slider",
   setup() {
-    const select = ref('')
-    const value = reactive({ selectValue: select })
+    const value = reactive({ sliderValue: [30, 80] })
+    const formatTooltip = (val: any) => {
+      return val / 100
+    }
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
-          key: 'selectValue',
-          col: 12,
-          width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
+          type: 'es-slider',
+          label: 'Vertical',
+          key: 'sliderValue',
+          col: 24,
           attrs: {
-            placeholder: '请选择'
+            'style': 'width: 100%; height: 200px;',
+            'format-tooltip': formatTooltip,
+            'min': 0,
+            'max': 100,
+            'vertical': true // 设置 vertical 属性可使 Slider 变成竖向模式， 此时必须设置高度 height 属性
           },
           listeners: {
             'change': (val:any) => {
@@ -56,7 +50,7 @@ export default {
         }
       ]),
       rules: ref({
-        selectValue: [
+        sliderValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })
