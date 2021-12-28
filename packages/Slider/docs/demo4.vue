@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Slider组件 Range属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,26 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
-  
+  name: "Slider",
   setup() {
-    const select = ref('')
-    const value = reactive({ selectValue: select })
+    const value = reactive({ sliderValue: [30, 80] })
+    const formatTooltip = (val: any) => {
+      return val / 100
+    }
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
-          key: 'selectValue',
-          col: 12,
-          width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
+          type: 'es-slider',
+          label: 'Range',
+          key: 'sliderValue',
+          col: 24,
           attrs: {
-            placeholder: '请选择'
+            'style': 'width: 100%;',
+            'format-tooltip': formatTooltip,
+            'min': 0,
+            'max': 100,
+            'range': true // 设置 range 即可开启范围选择，此时绑定值是一个数组，其元素分别为最小边界值和最大边界值
           },
           listeners: {
             'change': (val:any) => {
@@ -56,7 +50,7 @@ export default {
         }
       ]),
       rules: ref({
-        selectValue: [
+        sliderValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Slider组件 Range属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,38 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
-  
+  name: "Slider",
   setup() {
-    const select = ref('')
-    const value = reactive({ selectValue: select })
+    const value = reactive({ sliderValue: [30, 80] })
+    const marks = reactive({
+      0: '0°C',
+      8: '8°C',
+      37: '37°C',
+      50: {
+        style: {
+          color: '#1989FA',
+        },
+        label: '50%',
+      },
+    })
+    const formatTooltip = (val: any) => {
+      return val / 100
+    }
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
-          key: 'selectValue',
-          col: 12,
-          width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
+          type: 'es-slider',
+          label: 'Range',
+          key: 'sliderValue',
+          col: 24,
           attrs: {
-            placeholder: '请选择'
+            'style': 'width: 100%;',
+            'format-tooltip': formatTooltip,
+            'min': 0,
+            'max': 100,
+            'range': true,
+            'marks': marks // 设置 marks 属性可以展示标记
           },
           listeners: {
             'change': (val:any) => {
@@ -56,7 +62,7 @@ export default {
         }
       ]),
       rules: ref({
-        selectValue: [
+        sliderValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })

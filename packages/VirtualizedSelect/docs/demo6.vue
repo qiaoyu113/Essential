@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Virtualized Select filterable属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,40 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
+  name: "SelectV2",
   
   setup() {
-    const select = ref('')
+    const select = ref([])
     const value = reactive({ selectValue: select })
+    const initials = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    const options = ref(
+         Array.from({ length: 10 }).map((_, idx) => {
+          const label = idx + 1
+          return {
+            value: `Group ${label}`,
+            label: `Group ${label}`,
+            options: Array.from({ length: 10 }).map((_, idx) => ({
+              value: `Option ${idx + 1 + 10 * label}`,
+              label: `${initials[idx % 10]}${idx + 1 + 10 * label}`,
+            })),
+          }
+        })
+      )
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
+          type: 'es-select-v2',
+          label: 'Filterable',
           key: 'selectValue',
-          col: 12,
+          col: 24,
           width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
+          options: options,
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            style: 'width: 240px;',
+            multiple: true,
+            filterable: true // 设置 filterable 实现可过滤的多选
           },
           listeners: {
             'change': (val:any) => {

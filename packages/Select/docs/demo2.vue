@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Select组件 Disabled属性"
     >
       <EsForm
         ref="EsForm"
@@ -35,7 +35,8 @@ export default {
           options: ref([
             {
               value: 'Option1',
-              label: 'Option1'
+              label: 'Option1',
+              disabled: true, // 通过disabled属性设置某一项为禁用状态
             },
             {
               value: 'Option2',

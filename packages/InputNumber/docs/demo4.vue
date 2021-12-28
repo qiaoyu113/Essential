@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number stepStrictly属性"
+      title="Input Number StepStrictly属性"
     >
       <EsForm
         ref="EsForm"

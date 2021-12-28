@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Select组件 Multiple属性"
     >
       <EsForm
         ref="EsForm"
@@ -21,8 +21,10 @@ export default {
   name: "Select",
   
   setup() {
-    const select = ref('')
-    const value = reactive({ selectValue: select })
+    const value = reactive({ 
+      selectValue: [],
+      selectValue2: []
+    })
     return {
       listQuery: value,
       formItem: ref([
@@ -43,7 +45,38 @@ export default {
             }
           ]),
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            multiple: true //  设置 multiple 属性即可启用多选
+          },
+          listeners: {
+            'change': (val:any) => {
+              ElMessage({
+                message: '已经选中：' + val,
+                type: 'success'
+              });
+            }
+          }
+        },
+        {
+          type: 'es-select',
+          label: 'Select',
+          key: 'selectValue2',
+          col: 12,
+          width: '10px',
+          options: ref([
+            {
+              value: 'Option1',
+              label: 'Option1'
+            },
+            {
+              value: 'Option2',
+              label: 'Option2'
+            }
+          ]),
+          attrs: {
+            placeholder: '请选择',
+            multiple: true,
+            collapseTags: true // 设置 collapse-tags 属性将它们合并为一段文字
           },
           listeners: {
             'change': (val:any) => {

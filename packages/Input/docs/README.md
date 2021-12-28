@@ -6,7 +6,7 @@ import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
 import demo6 from './demo6.vue'
-import demo7 from './demo7.vue'
+// import demo7 from './demo7.vue'
 import demo8 from './demo8.vue'
 </script>
 <!-- 加载 demo 组件 end -->
@@ -45,10 +45,10 @@ import demo8 from './demo8.vue'
   <demo6 />
 </Preview>
 
-### 自定义建议模板
+<!-- ### 自定义建议模板
 <Preview comp-name="Input" demo-name="demo7">
   <demo7 />
-</Preview>
+</Preview> -->
 
 ### 输入长度限制
 <Preview comp-name="Input" demo-name="demo8">

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Clearable属性"
+      title="Input Number ControlsPosition属性"
     >
       <EsForm
         ref="EsForm"
@@ -17,36 +17,36 @@
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Input",
+  name: "InputNumber",
   
   setup() {
-    const input = ref('')
-    const value = reactive({ inputValue: input })
+    const inputNumber = ref(0)
+    const value = reactive({ inputNumberValue: inputNumber })
     return {
       listQuery: value,
-      formItem: [
+      formItem: ref([
         {
-          type: 'es-input',
-          label: 'Input',
-          key: 'inputValue',
-          col: 12,
-          width: '100px',
+          type: 'es-input-number',
+          label: 'Input Number',
+          key: 'inputNumberValue',
+          col: 24,
+          width: '120px',
           attrs: {
             placeholder: '请输入',
-            clearable: true // 配置clearable实现一键清空
+            controlsPosition: 'right'
           },
           listeners: {
-            'input': (val:any) => {
+            'change': (val:any) => {
               console.log('输入内容：' + val)
             }
           }
         }
-      ],
-      rules: {
-        inputValue: [
+      ]),
+      rules: ref({
+        inputNumberValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      }
+      })
     }
   }
 };

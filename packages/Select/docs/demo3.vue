@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Select组件 Disabled属性"
     >
       <EsForm
         ref="EsForm"
@@ -21,7 +21,7 @@ export default {
   name: "Select",
   
   setup() {
-    const select = ref('')
+    const select = ref('Option1')
     const value = reactive({ selectValue: select })
     return {
       listQuery: value,
@@ -36,14 +36,11 @@ export default {
             {
               value: 'Option1',
               label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
             }
           ]),
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            disabled: true, // 通过disabled属性设置整个选择器组件为禁用状态
           },
           listeners: {
             'change': (val:any) => {

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Rate组件 ShowText属性"
     >
       <EsForm
         ref="EsForm"
@@ -18,32 +18,24 @@ import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
 
 export default {
-  name: "Select",
+  name: "Rate",
   
   setup() {
-    const select = ref('')
-    const value = reactive({ selectValue: select })
+    const rate = ref(0)
+    const value = reactive({ rateValue: rate })
     return {
       listQuery: value,
       formItem: ref([
         {
-          type: 'es-select',
-          label: 'Select',
-          key: 'selectValue',
-          col: 12,
+          type: 'es-rate',
+          label: 'RateDefault',
+          key: 'rateValue',
+          col: 24,
           width: '100px',
-          options: ref([
-            {
-              value: 'Option1',
-              label: 'Option1'
-            },
-            {
-              value: 'Option2',
-              label: 'Option2'
-            }
-          ]),
           attrs: {
-            placeholder: '请选择'
+            style: 'line-height: 2.5;',
+            showText: true, // 为组件设置 show-text 属性会在右侧显示辅助文字
+            texts: ['oops', 'disappointed', 'normal', 'good', 'great'] // 通过设置 texts 可以为每一个分值指定对应的辅助文字
           },
           listeners: {
             'change': (val:any) => {
@@ -56,7 +48,7 @@ export default {
         }
       ]),
       rules: ref({
-        selectValue: [
+        rateValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
       })

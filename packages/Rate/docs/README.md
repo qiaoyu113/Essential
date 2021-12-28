@@ -1,7 +1,10 @@
 <!-- 加载 demo 组件 start -->
 <script setup>
 import demo from './demo.vue'
-</script>
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+  </script>
 <!-- 加载 demo 组件 end -->
 
 <!-- 正文开始 -->
@@ -11,6 +14,21 @@ import demo from './demo.vue'
 ### 示例
 <Preview comp-name="Rate" demo-name="demo">
   <demo />
+</Preview>
+
+### 辅助文字
+<Preview comp-name="Rate" demo-name="demo2">
+  <demo2 />
+</Preview>
+
+### 使用自定义的图标
+<Preview comp-name="Rate" demo-name="demo3">
+  <demo3 />
+</Preview>
+
+### 只读
+<Preview comp-name="Rate" demo-name="demo4">
+  <demo4 />
 </Preview>
 
 ### 属性

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Input Number precision属性"
+      title="Input Number Precision属性"
     >
       <EsForm
         ref="EsForm"

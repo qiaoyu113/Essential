@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Select组件"
+      title="Select组件 Clearable属性"
     >
       <EsForm
         ref="EsForm"
@@ -43,7 +43,8 @@ export default {
             }
           ]),
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            clearable: true
           },
           listeners: {
             'change': (val:any) => {

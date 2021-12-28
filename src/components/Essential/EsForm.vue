@@ -57,16 +57,35 @@
           <el-radio-group
             v-else-if="item.type === 'es-radio'"
             v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
             v-on="item.listeners"
           >
             <el-radio
               v-for="(sub,index) in item.options"
               :key="'radio-'+sub.value+'-'+index"
               :label="sub.value"
-              v-bind="item.attrs || {}"
+              :disabled="sub.disabled"
+              v-bind="item.tagAttrs || {}"
             >
               {{ sub.label }}
             </el-radio>
+          </el-radio-group>
+          <!-- el-radio-group -->
+          <el-radio-group
+            v-else-if="item.type === 'es-radio-group'"
+            v-model="listQuery[item.key]"
+            v-bind="item.attrs || {}"
+            v-on="item.listeners"
+          >
+            <el-radio-button
+              v-for="(sub,index) in item.options"
+              :key="'radio-'+sub.value+'-'+index"
+              :label="sub.value"
+              :disabled="sub.disabled"
+              v-bind="item.tagAttrs || {}"
+            >
+              {{ sub.label }}
+            </el-radio-button>
           </el-radio-group>
           <!-- rate -->
           <el-rate 
@@ -89,6 +108,7 @@
               :style="'max-width:700px'"
               :label="sub.label"
               :value="sub.value"
+              :disabled="sub.disabled"
             />
           </el-select>
           <!-- selectV2下拉框 -->
@@ -111,7 +131,7 @@
             v-else-if="item.type === 'es-switch'"
             v-model="listQuery[item.key]"
             v-bind="item.attrs || {}"
-            v-on="item.listeners"
+            v-on="item.listeners || {}"
           />
           <!-- el-checbox -->
           <el-checkbox-group
@@ -199,6 +219,7 @@
               <div v-html="item.template" />
             </template>
           </UpLoad> -->
+          
           <slot
             v-else-if="item.slot"
             :name="item.type"
