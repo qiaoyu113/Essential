@@ -4,6 +4,7 @@ import demo from './demo.vue'
 import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -16,6 +17,11 @@ import demo4 from './demo4.vue'
   <demo />
 </Preview>
 
+### setOption动态更新
+<Preview comp-name="EsChartsLine" demo-name="demo5">
+  <demo5 />
+</Preview>
+
 ### 基础面积
 <Preview comp-name="EsChartsLine" demo-name="demo3">
   <demo3 />
@@ -26,7 +32,7 @@ import demo4 from './demo4.vue'
   <demo2 />
 </Preview>
 
-### 可推拽
+### 可推拽（拖拽无效 echarts5 graphic部分属性失效，等待官方文档更新）
 <Preview comp-name="EsChartsLine" demo-name="demo4">
   <demo4 />
 </Preview>

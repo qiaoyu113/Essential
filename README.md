@@ -14,7 +14,7 @@
 
 | Author | E-mail |
 | ------ | ----- |
-| [@乔宇(Joey)](http://github.com/qiaoyu113) | 527324363@qq.com |
+| [乔宇(Joey)](http://github.com/qiaoyu113) | 527324363@qq.com |
 
 # 
 ### 开发成员
@@ -43,9 +43,9 @@ npm install -g @vue/cli
 # 
 # 
 ### Step 2
-新建项目，以下我新建一个名称为`my-vue`的项目
+新建项目，以下我新建一个名称为`my-es`的项目
 ```
-vue create my-vue
+vue create my-es
 ```
 enter之后，根据项目提示，接下来会让你选择一个预设, 这里就不展开赘述，大家可以到官网查看相关文档。
 

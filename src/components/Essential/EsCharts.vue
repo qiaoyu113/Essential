@@ -4,10 +4,10 @@
 
 <script lang="ts">
 import * as echarts from "echarts";
-import { watch, ref, nextTick } from 'vue'
+import { watch, ref, nextTick, defineComponent } from 'vue'
 import { onMounted, onUnmounted } from "@vue/runtime-core";
 
-export default {
+export default defineComponent({
   name: "EsCharts",
   data () {
     return {
@@ -22,7 +22,7 @@ export default {
     'eWidth',
     'eHeight',
     'theme',
-    'options',
+    'options'
   ],
   components: {},
   setup(props) {
@@ -51,7 +51,7 @@ export default {
     }
     
     // 定义变量存储echarts对象
-    let docEcharts = ref();
+    let attrs = ref();
     
     onMounted(() => {
       initChart();
@@ -66,7 +66,7 @@ export default {
     const initChart = () => {
       nextTick(() => {
         const chart = (echart as any).init(document.getElementById(props.echartsId), props.theme);
-        docEcharts.value = chart
+        attrs.value = chart
         divListen(props.echartsId, chart, this)
         // 把配置和数据放这里
         chart && chart.clear();
@@ -74,20 +74,20 @@ export default {
         // 监听数据变化后重置数据
         watch(props.options,
           () => {
+            console.log(props.options)
             chart && chart.clear();
             props.options && chart.setOption(props.options, true)
           }
         )
-        console.log(2, docEcharts)
       })
     }
     return {
-      docEcharts
+      attrs
     }
   },
   methods: {
   }
-};
+});
 
 function elementResizeDetectorMaker() {
   // throw new Error('Function not implemented.');
