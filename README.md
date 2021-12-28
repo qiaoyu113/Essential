@@ -18,8 +18,9 @@
 
 | Team Member | E-mail |
 | ------ | ------ |
+
 | 张慧慧[@张慧慧(ZhangHhui)]（https://github.com/ZhangHhui） | 1191213054@qq.com |
-| 王云芳 |  |
+| 王云芳 |  | 2096745969@qq.com
 
 ### 安装
 ---

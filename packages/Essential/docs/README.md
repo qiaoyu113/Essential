@@ -22,7 +22,5 @@
 | Team Member | E-mail |
 | ------ | ------ |
 | 张慧慧 | 1191213054@qq.com |
-| 王云芳 |  |
-# 
-### NPM
-- [查看NPM地址](https://www.npmjs.com/package/es-com)
+| 王云芳 | 2096745969@qq.com |
+

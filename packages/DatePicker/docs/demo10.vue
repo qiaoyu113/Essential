@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="TimePicker组件"
+      title="DatePicker prefix-icon 属性"
     >
       <EsForm
         ref="EsForm"
@@ -15,24 +15,26 @@
 <script lang="ts">
 
 import { ElMessage } from 'element-plus'
-import { ref, reactive } from 'vue'
+import { ref, reactive,shallowRef} from 'vue'
 
 export default {
-  name: "TimePicker",
+  name: "DatePicker",
   
   setup() {
-    const time = ref(new Date(2016, 9, 10, 18, 40))
-    const value = reactive({ TimePickerValue: time })
+    const date = ref('')
+    const value = reactive({ DatePickerValue: date })
     return {
       listQuery: value,
       formItem: [
         {
-          type: 'es-time-picker',
-          label: 'TimePicker',
-          key: 'TimePickerValue',
+          type: 'es-date-picker',
+          label: 'DatePicker',
+          key: 'DatePickerValue',
           col: 12,
-          width: '100px',
-          tagAttrs: {
+          attrs: {
+            'placeholder': '请选择',
+            'type': 'date',
+            'prefix-icon':'avatar'  //自定义前缀图标
           },
           listeners: {
             'change': (val:any) => {
@@ -45,7 +47,7 @@ export default {
         }
       ],
       rules: {
-        TimePickerValue: [
+        DatePickerValue: [
           { required: true, message: '请选择', trigger: 'change' }
         ]
       }
