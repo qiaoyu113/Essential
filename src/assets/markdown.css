@@ -42,7 +42,10 @@ a {
     font-weight: 400;
     padding-left: 50px;
 }
-
+/* 2021-12-24 wyf */
+.el-picker__popper .el-picker-panel__body a {
+    padding-left: 0px;
+}
 h1,
 h2,
 h3,

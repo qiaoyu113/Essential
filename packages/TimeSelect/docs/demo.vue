@@ -32,11 +32,11 @@ export default {
           key: 'TimeSelectValue',
           col: 12,
           width: '100px',
-          attrs: {
+          tagAttrs: {
             'start-placeholder': '开始时间',
             'end-placeholder': '结束时间',
             'placeholder': '选择时间范围',
-            'value-format': "timestamp"
+            'value-format': "timestamp",
           },
           listeners: {
             'change': (val:any) => {

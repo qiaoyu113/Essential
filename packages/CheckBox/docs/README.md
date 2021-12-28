@@ -1,6 +1,8 @@
 <!-- 加载 demo 组件 start -->
 <script setup>
 import demo from './demo.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
 </script>
 <!-- 加载 demo 组件 end -->
 
@@ -11,6 +13,16 @@ import demo from './demo.vue'
 ### 示例
 <Preview comp-name="CheckBox" demo-name="demo">
   <demo />
+</Preview>
+
+### 禁用状态
+<Preview comp-name="CheckBox" demo-name="demo2">
+  <demo2 />
+</Preview>
+
+### 中间状态
+<Preview comp-name="CheckBox" demo-name="demo3">
+  <demo3 />
 </Preview>
 
 ### 属性

@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Transfer组件"
+      title="Transfer filterable属性 "
     >
       <EsForm
         ref="EsForm"
@@ -50,7 +50,7 @@ export default {
           col: 24,
           attrs: {
             'placeholder': '选择',
-            'filterable': false,
+            'filterable': true, //是否可搜索
             'left-default-checked': [2, 3],
             'right-default-checked': [1],
             'render-content': (h: any, option: any) => {

@@ -176,8 +176,13 @@
             v-else-if="item.type === 'es-date-picker'"
             v-model="listQuery[item.key]"
             v-bind="item.attrs || {}"
-            v-on="item.listeners"
-          />
+            v-on="item.listeners" >
+            <template v-if="item.slot" v-slot:[item.slot]>
+              
+            </template>
+          </el-date-picker>
+
+          
           <!--上传-->
           <!-- <UpLoad
             v-else-if="item.type === 'es-upload'"

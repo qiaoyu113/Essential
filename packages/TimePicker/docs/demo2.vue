@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="TimePicker组件"
+      title="TimePicker arrow-control属性 "
     >
       <EsForm
         ref="EsForm"
@@ -33,6 +33,7 @@ export default {
           col: 12,
           width: '100px',
           tagAttrs: {
+            'arrow-control':true //是否使用箭头进行时间选择
           },
           listeners: {
             'change': (val:any) => {
