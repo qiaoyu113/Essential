@@ -25,10 +25,6 @@ export default {
         TimeSelectValue: '',
         TimeEndValue: ''
     })
-    const TimeSelectValue = toRefs(value).TimeSelectValue
-    console.log('TimeSelectValue',TimeSelectValue);
-    
-    
     const formItem = [
         {
           type: 'es-time-select',
@@ -44,6 +40,7 @@ export default {
           },
           listeners: {
             'change': (val:any) => {
+              // console.log("toRefs(value).TimeSelectValue",toRefs(value).TimeSelectValue);
               ElMessage({
                 message: '已经选中：' + val,
                 type: 'success'

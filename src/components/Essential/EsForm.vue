@@ -197,8 +197,11 @@
             v-model="listQuery[item.key]"
             v-bind="item.attrs || {}"
             v-on="item.listeners" >
-            <template v-if="item.slot" v-slot:[item.slot]>
-              
+            <template v-if="item.attrs.slot" v-slot:[item.attrs.slot]="cell">
+              <slot
+                :name="item.attrs.slot"
+                :cell="{...cell}"
+              />
             </template>
           </el-date-picker>
 

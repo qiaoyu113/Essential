@@ -8,7 +8,7 @@
         :form-item="formItem"
         :rules="rules"
       >
-      <template #default="cell">
+      <template #default="{cell}">
         <div class="cell" :class="{ current: cell.isCurrent }">
           <span class="text">{{ cell.text }}</span>
           <span v-if="isHoliday(cell)" class="holiday"></span>
@@ -22,7 +22,6 @@
 
 import { ElMessage } from 'element-plus'
 import { ref, reactive} from 'vue'
-import dayjs from 'dayjs'
 export default {
   name: "DatePicker",
   setup() {
@@ -37,10 +36,11 @@ export default {
       '2021-10-06',
       '2021-10-07',
     ]
-    function isHoliday( {dayjs}) {
+    const isHoliday = function isHoliday({ dayjs }: any) {
       return holidays.includes(dayjs.format('YYYY-MM-DD'))
     }
     return {
+      isHoliday,
       listQuery: value,
       formItem: [
         {
@@ -52,7 +52,7 @@ export default {
             'placeholder': '请选择',
             'type': 'date',
             'value-format':"YYYY-MM-DD",
-             slot :'cell',
+            'slot': 'default'
           },
           listeners: {
             'change': (val:any) => {
