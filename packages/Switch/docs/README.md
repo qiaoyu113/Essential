@@ -6,10 +6,10 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# Slider组件
+# Switch组件
 
 ### 示例
-<Preview comp-name="Slider" demo-name="demo">
+<Preview comp-name="Switch" demo-name="demo">
   <demo />
 </Preview>
 

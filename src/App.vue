@@ -58,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     .menu {
-      height: calc(100vh - 100px);
+      height: calc(100vh - 107px);
       overflow: scroll;
       padding-bottom: 30px;
       padding-right: 10px;

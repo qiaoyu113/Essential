@@ -30,7 +30,7 @@ export default {
           type: 'es-select',
           label: 'Select',
           key: 'selectValue',
-          col: 24,
+          col: 12,
           width: '100px',
           options: ref([
             {

@@ -64,7 +64,7 @@ export default {
         },
         {
           type: 'es-checkbox',
-          label: 'checkbox',
+          label: 'Check',
           key: 'CheckboxValue',
           col: 8,
           options: options,
