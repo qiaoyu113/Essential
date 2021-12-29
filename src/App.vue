@@ -40,9 +40,9 @@ body {
   margin: 0;
   padding: 0;
 }
-// .el-input__prefix{
-//   align-items: center;
-// }
+.el-input__prefix{
+  align-items: center;
+}
 .my-kit-doc {
   display: flex;
   min-height: 100vh;
