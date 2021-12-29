@@ -68,13 +68,36 @@ import demo10 from './demo10.vue'
 </Preview>
 
 ### 属性
-参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
-:-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+参数 | 说明 | 类型 | 可选值 | 默认值
+:-: | :-: | :-: | :-: | :-:
+`model-value / v-model` |	绑定值 |	string / number / boolean / object | — | —
+`multiple` |	是否多选 |	boolean |	— |	false
+`disabled` |	是否禁用 |	boolean |	— |	false
+`value-key` |	作为 value 唯一标识的键名，绑定值为对象类型时必填 |	string |	— |	value
+`size` |	输入框尺寸 |	string |	medium/small/mini |	— |
+`clearable` |	是否可以清空选项 |	boolean |	— |	false
+`collapse-tags` |	多选时是否将选中值按文字的形式展示 |	boolean |	—	 |false
+`multiple-limit` |	多选时用户最多可以选择的项目数， 为 0 则不限制 |	number |	— |	0
+`name` |	选择器的输入框的原生 | name 属性 |	string |	— |	—
+`autocomplete` |	选择器的输入框的原生 autocomplete 属性 |	string |	— |	off
+`placeholder` |	占位符 |	string |	— |	Please select
+`filterable` |	是否可搜索 |	boolean |	— |	false
+`allow-create` |	是否允许用户创建新条目， 只有当 filterable 设置为 true 时才会生效。 |	boolean |	— |	false
+`no-data-text` |	选项为空时显示的文字，也可以使用 empty 插槽自定义该内容 |	string |	— |	No Data
+`popper-class` |	下拉菜单的类名 |	string |	— |	—
+`popper-append-to-body` |	是否将弹出框插入至 body 元素。 在弹出框的定位出现问题时，可将该属性设置为 false |	boolean |	- |	false
+`popper-options` |	popper.js 的参数 |	object |	- |	-
+`automatic-dropdown` |	对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单	 |boolean |	- |	false
+`clear-icon |`	自定义清除图标 |	string / Component |	—	 |CircleClose
+`height` |	下拉菜单的高度，每一个子选项的高度是 34px |	number |	-	 |170px
+`scrollbar-always-on` |	控制是否总是展示滚动条 |	boolean |	- |	false
 
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+事件名 | 说明 | 参数列表
+:-: | :-: | :-:
+`change` |	选中值发生变化时触发 |	val，目前的选中值
+`visible-change` |	下拉框出现/隐藏时触发 |	val，出现则为 true，隐藏则为 false
+`remove-tag` |	多选模式下移除tag时触发 |	val，移除的tag值
+`clear` |	可清空的单选模式下用户点击清空按钮时触发 |	— |
+`blur` |	当选择器的输入框失去焦点时触发 |	(event: FocusEvent)
+`focus` |	当选择器的输入框获得焦点时触发 |	(event: FocusEvent)

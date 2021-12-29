@@ -32,13 +32,30 @@ import demo4 from './demo4.vue'
 </Preview>
 
 ### 属性
-参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
-:-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+参数 | 说明 | 类型 | 可选值 | 默认值
+:-: | :-: | :-: | :-: | :-: 
+`model-value / v-model`	| 选中项绑定值 |	string / number / boolean	| — |	—
+`label` |	单选框对应的值 |	string / number / boolean	| — |	—
+`disabled` |	是否禁用单选框 |	boolean	| — |	false
+`border` |	是否显示边框 |	boolean	| — |	false
+`size` |	Radio 的尺寸 |	string	| medium / small / mini | -
+`name` |	原生 name 属性 |	string	| — |	—
 
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+事件名 | 说明 | 参数列表
+:-: | :-: | :-:
+`change` |	绑定值变化时触发的事件 |	选中的 Radio label 值
+
+### Radio-group 属性
+参数 | 说明 | 类型 | 可选值 | 默认值
+:-: | :-: | :-: | :-: | :-: 
+`model-value / v-model`	| 选中项绑定值 |	string / number / boolean	| — |	—
+`size` |	单选框组尺寸|	string |	medium / small / mini |	—
+`disabled` |	是否禁用|	boolean |	—	| false
+`text-color` |	按钮形式的 Radio 激活时的文本颜色|	string |	— |	#ffffff
+`fill` |	按钮形式的 Radio 激活时的填充色和边框色|	string |	— |	#409EFF
+
+### Radio-group事件
+事件名 | 说明 | 参数列表
+:-: | :-: | :-:
+`change` |	绑定值变化时触发的事件 |	选中的 Radio label 值
