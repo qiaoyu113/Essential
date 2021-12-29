@@ -3,7 +3,7 @@
 ### 介绍
 ---
 
-`Essential` 是一款结合`Element plus` + `Vue3`开发的快速页面生成组件库，与`ElementUI`不同的是，不需要写过多的`view`层，只需要通过简单的`Js`代码便可实现`ElementUI`的所有组件。
+`Essential` 是一款以`Vue3` + `ts` + `vite` + `Element plus` + `EChart 5`开发的快速页面生成组件库，开发快速，易于维护，不需要写过多的`view`层，只需要通过`JSON` + `Js`代码便可实现`Element plus`、`EChart 5`等所有组件。
 
 <img src="https://prod-mf-common-bucket.oss-cn-hangzhou.aliyuncs.com/img/WechatIMG127%20(1).png" width="375">
 
@@ -21,6 +21,8 @@
 ### 开发成员
 | Team Member | E-mail |
 | ------ | ------ |
-| 张慧慧 | 1191213054@qq.com |
-| 王云芳 | 2096745969@qq.com |
-
+| [张慧慧](https://github.com/ZhangHhui) | 1191213054@qq.com |
+| [王云芳](https://github.com/TuanZi-77) | 2096745969@qq.com |
+# 
+### npm
+- [ESSENTIAL (npm地址)](https://www.npmjs.com/package/es-com)

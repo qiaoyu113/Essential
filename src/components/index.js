@@ -3,13 +3,15 @@ import EsContainer from './EssentialContainer/index.vue';
 import EsItem from './Essential/EsItem.vue';
 import EsTable from './Essential/EsTable.vue';
 import Pagination from './Essential/Pagination.vue';
+import EsCharts from './Essential/EsCharts.vue';
 
 const components = {
     EsForm,
     EsContainer,
     EsItem,
     EsTable,
-    Pagination
+    Pagination,
+    EsCharts
 };
 
 function install(Vue) {

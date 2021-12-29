@@ -134,5 +134,21 @@
     "compZhName": "EsTable",
     "compDesc": "EsTable组件",
     "compClassName": "EsTable"
+  },
+  {
+    "compName": "Meau",
+    "compZhName": "ECharts"
+  },
+  {
+    "compName": "EsChartsBar",
+    "compZhName": "柱状图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsLine",
+    "compZhName": "折线图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
   }
 ]

@@ -1,11 +1,11 @@
 {
   "name": "es-com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "author": "乔宇Joey",
   "main": "lib/index.js",
   "license": "MIT",
-  "keywords": "es-com",
+  "keywords": ["es-com", "essential", "Essential", "华夏出行", "北汽集团"],
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^0.2.4",
     "dayjs": "^1.10.7",
+    "echarts": "^5.2.2",
     "element-plus": "^1.2.0-beta.6",
     "prismjs": "^1.25.0",
     "sass": "^1.45.0",

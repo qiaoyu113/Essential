@@ -132,6 +132,16 @@
     name: 'EsTable',
     path: '/components/EsTable',
     component: () => import('packages/EsTable/docs/README.md'),
+  },{
+    title: 'EsCharts组件',
+    name: 'EsChartsBar',
+    path: '/components/EsChartsBar',
+    component: () => import('packages/EsChartsBar/docs/README.md'),
+  },{
+    title: 'EsCharts组件',
+    name: 'EsChartsLine',
+    path: '/components/EsChartsLine',
+    component: () => import('packages/EsChartsLine/docs/README.md'),
   }];
   
  const routerConfig = {
