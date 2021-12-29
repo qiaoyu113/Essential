@@ -252,7 +252,8 @@ table tr th {
     border-bottom: 1px solid #dcdfe6;
     padding: 15px;
     font-size: 13px;
-    color: #606266
+    color: #606266;
+    min-width: 100px;
 }
 
 table tr td {
