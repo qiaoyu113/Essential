@@ -233,6 +233,7 @@ table {
     word-break: initial;
     border-collapse: separate; 
     border-spacing: 0 0;
+    width: 100%;
 }
 
 table tr {
