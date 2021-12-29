@@ -1,19 +1,22 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowJs": true,
+    "noEmitHelpers": false,
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "paths": {
-      "packages/*": ["./packages/*"]
+      // 根据别名配置相关路径
+      "@/*": ["./src/*"]
     }
   },
   "include": [

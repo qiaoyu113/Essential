@@ -30,10 +30,28 @@ import demo from './demo.vue'
             <p>import ElementUI from 'element-ui';</p>
         </code> -->
         <code class="language-javascript line-numbers">
+            <p>// 引入Element plus</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>import 'element-plus/dist/index.css';</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>import ElementPlus from 'element-plus';</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>// 引入Essential</p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>import 'es-com/dist/style.css';</p>
+        </code>
+        <code class="language-javascript line-numbers">
             <p>import Essential from 'es-com';</p>
         </code>
         <code class="language-javascript line-numbers">
-            <p>Vue.use(Essential);</p>
+            <p style="padding: 10px;"> </p>
+        </code>
+        <code class="language-javascript line-numbers">
+            <p>Vue.use(ElementPlus).use(Essential);</p>
         </code>
         <code class="language-javascript line-numbers">
             <p style="padding: 10px;"> </p>

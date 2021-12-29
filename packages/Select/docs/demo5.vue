@@ -62,7 +62,7 @@ export default {
           label: 'Select',
           key: 'selectValue2',
           col: 12,
-          width: '10px',
+          width: '100px',
           options: ref([
             {
               value: 'Option1',

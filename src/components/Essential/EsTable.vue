@@ -22,7 +22,7 @@
         :selectable="func"
       />
       <el-table-column
-        v-for="item in columns"
+        v-for="item in (columns as any)"
         :key="item.key"
         :prop="item.key"
         :align="item.align || 'center'"
@@ -36,7 +36,8 @@
             #default="scope"
         >
           <template v-if="item.moreOp && item.moreOp.length > 0">
-            <el-dropdown @command="(e) => handleCommand(e,scope.row)">
+            <el-dropdown>
+            <!-- <el-dropdown @command="(e) => handleCommand(e,scope.row)"> -->
               <span class="el-dropdown-link">
                 <slot
                   v-if="item.slot"
