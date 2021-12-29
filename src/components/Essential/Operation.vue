@@ -15,7 +15,7 @@
       class="operation-list"
     >
       <div
-        v-for="item in operationList"
+        v-for="item in (operationList as any)"
         :key="item.name"
         class="ol"
         @click="handlePageSizeChange(item)"

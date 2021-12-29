@@ -12,10 +12,10 @@
 import { reactive, onMounted, nextTick, ref } from 'vue'
 
 export default({
-    name: 'EsChart',
+    name: 'EsChart5',
     setup() {
         const EsChartsRef: any = ref();
-        const EsChart = reactive({ 
+        const EsChart: any = reactive({ 
             Id: 'EsChart5', // 注意：id是唯一的，不能重复
             eWidth: '600px',
             eHeight: '400px',
@@ -40,9 +40,10 @@ export default({
         })
         onMounted(()=>{
             nextTick(() => {
+                let es = EsChartsRef.value.attrs
                 setInterval(() => {
                     let datas = [Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1)]
-                    EsChartsRef.value.attrs.setOption({
+                    es.setOption({
                         series: [
                             {
                                 data: datas,

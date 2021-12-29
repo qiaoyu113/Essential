@@ -4,8 +4,7 @@
 
 <script lang="ts">
 import * as echarts from "echarts";
-import { watch, ref, nextTick, defineComponent } from 'vue'
-import { onMounted, onUnmounted } from "@vue/runtime-core";
+import { watch, ref, nextTick, defineComponent, onMounted, onUnmounted } from 'vue'
 
 export default defineComponent({
   name: "EsCharts",
@@ -17,18 +16,17 @@ export default defineComponent({
   },
   watch: {},
   computed: {},
-  props: [
-    'echartsId',
-    'eWidth',
-    'eHeight',
-    'theme',
-    'options'
-  ],
+  props: {
+    echartsId: null,
+    eWidth: null,
+    eHeight: null,
+    theme: null,
+    options: null
+  },
   components: {},
   setup(props) {
     /// 声明定义一下echart
     const echart = echarts;
-
     // 监听变化
     const divListen = (div: any, chart: any, t: any) => {
         // let that = this
@@ -74,7 +72,6 @@ export default defineComponent({
         // 监听数据变化后重置数据
         watch(props.options,
           () => {
-            console.log(props.options)
             chart && chart.clear();
             props.options && chart.setOption(props.options, true)
           }

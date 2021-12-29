@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   ...baseConfig,
-  base: '/MY-Kit',
+  base: '/essential',
   build: {
     outDir: 'docs',
   },

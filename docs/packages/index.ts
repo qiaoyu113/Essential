@@ -9,11 +9,15 @@ import { App, Plugin } from 'vue';
 
 import { ButtonPlugin } from './Button';
 import { FooPlugin } from './Foo';
+import { InputPlugin } from './Input';
+import { RadioPlugin } from './Radio';
 
 const MYKitPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app);
     FooPlugin.install?.(app);
+    InputPlugin.install?.(app);
+    RadioPlugin.install?.(app);
   },
 };
 
@@ -21,3 +25,5 @@ export default MYKitPlugin;
 
 export * from './Button'
 export * from './Foo'
+export * from './Input'
+export * from './Radio'
