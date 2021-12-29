@@ -7,6 +7,10 @@
 
 <img src="https://prod-mf-common-bucket.oss-cn-hangzhou.aliyuncs.com/img/WechatIMG127%20(1).png" width="375">
 
+### 
+[👉 ESSENTIAL 官方文档](http://essential.baic-mfexpress.com/)
+# 
+# 
 ### 项目架构版本
 | Vue | Element-Plus | TypeScript |
 | ------ | ------ | ------ |

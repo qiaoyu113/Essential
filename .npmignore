@@ -1,0 +1,12 @@
+**/.*
+bulid/
+node_modules/
+packages/
+script/
+src/
+package-lock.json
+package.json
+README.md
+webpack.*.js
+rollup.config.js
+yarn.lock

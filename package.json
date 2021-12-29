@@ -1,6 +1,6 @@
 {
   "name": "es-com",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "private": false,
   "author": "乔宇Joey",
   "module": "dist/essential.es.js",
