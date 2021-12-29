@@ -12,7 +12,7 @@ import { reactive } from 'vue'
 import * as echarts from 'echarts'
 
 export default({
-    name: 'EsChart',
+    name: 'EsChart2',
     setup() {
         const EsChart = reactive({ 
             Id: 'EsChart2', // 注意：id是唯一的，不能重复

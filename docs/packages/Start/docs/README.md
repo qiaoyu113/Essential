@@ -30,7 +30,7 @@ import demo from './demo.vue'
             <p>import ElementUI from 'element-ui';</p>
         </code> -->
         <code class="language-javascript line-numbers">
-            <p><!--引入Element plus--></p>
+            <p>// 引入Element plus</p>
         </code>
         <code class="language-javascript line-numbers">
             <p>import 'element-plus/dist/index.css';</p>
@@ -39,7 +39,7 @@ import demo from './demo.vue'
             <p>import ElementPlus from 'element-plus';</p>
         </code>
         <code class="language-javascript line-numbers">
-            <p><!--引入Essential--></p>
+            <p>// 引入Essential</p>
         </code>
         <code class="language-javascript line-numbers">
             <p>import 'es-com/dist/style.css';</p>

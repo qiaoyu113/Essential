@@ -41,7 +41,8 @@ export default {
           width: '100px',
           options: options,
           attrs: {
-            placeholder: '请选择'
+            placeholder: '请选择',
+            style: 'width: 240px;'
           },
           listeners: {
             'change': (val:any) => {

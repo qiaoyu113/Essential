@@ -1,6 +1,6 @@
 <template>
   <EsContainer
-      title="Virtualized Select collapseTags属性"
+      title="Virtualized Select CollapseTags属性"
     >
       <EsForm
         ref="EsForm"

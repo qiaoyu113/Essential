@@ -53,11 +53,29 @@ import demo7 from './demo7.vue'
 ### 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
 :-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+`model-value / v-model` |	选中项绑定值 |	number / undefined | —
+`min` |	设置计数器允许的最小值 |	number |	— |	-Infinity
+`max` |	设置计数器允许的最大值 |	number |	— |	Infinity
+`step` |	计数器步长 |	number |	— |	1
+`step-strictly`	是否只能输入 step 的倍数 |	boolean |	— |	false
+`precision` |	数值精度 |	number |	— |	—
+`size` |	计数器尺寸 |	string |	large/medium/small/mini |	large
+`disabled` |	是否禁用计数器 |	boolean |	— |	false
+`controls` |	是否使用控制按钮 |	boolean |	— |	true
+`controls-position`	控制按钮位置 |	string |	right |	-
+`name` |	原生 name 属性 |	string |	— |	—
+`label` |	输入框关联的 label 文字 |	string |	— |	—
+`placeholder` |	输入框默认 | placeholder |	string |	- |	-
 
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+事件名 | 说明 | 回调参数
+:-: | :-: | :-: 
+`change` |	绑定值被改变时触发 |	(currentValue: number / NaN, oldValue: number / NaN)
+`blur` |	在组件 Input 失去焦点时触发 |	(event: Event)
+`focus` |	在组件 Input 获得焦点时触发 |	(event: Event)
+
+### 方法
+方法名 | 说明	| 参数
+:-: | :-: | :-: 
+`focus` |	使 input 组件获得焦点	| -
+`blur` |	使 input 组件失去焦点	| —

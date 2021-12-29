@@ -36,6 +36,7 @@
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
     "build:doc": "vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "dist": "vite build --config ./build/doc.config.ts && node script/copyDir.js",
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
     "gen": "node ./script/genNewComp/index.js",
     "build:npm": "vite build --config ./build/lib.config.ts"
