@@ -5,6 +5,6 @@ export default defineConfig({
   ...baseConfig,
   base: '/essential',
   build: {
-    outDir: 'docs',
+    outDir: 'essential',
   },
 });
