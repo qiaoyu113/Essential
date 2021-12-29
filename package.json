@@ -5,7 +5,13 @@
   "author": "乔宇Joey",
   "main": "lib/index.js",
   "license": "MIT",
-  "keywords": ["es-com", "essential", "Essential", "华夏出行", "北汽集团"],
+  "keywords": [
+    "es-com",
+    "essential",
+    "Essential",
+    "华夏出行",
+    "北汽集团"
+  ],
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",

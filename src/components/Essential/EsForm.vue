@@ -144,9 +144,28 @@
               v-for="(sub,index) in item.options"
               :key="'checkbox-'+sub.value+'-'+index"
               :label="sub.value"
+              :disabled="sub.disabled"
+              v-bind="item.tagAttrs || {}"
             >
               {{ sub.label }}
             </el-checkbox>
+          </el-checkbox-group>
+          <!-- el-checkbox-button -->
+          <el-checkbox-group
+            v-else-if="item.type === 'es-checkbox-button'"
+            v-model="listQuery[item.key]"
+            v-bind="item.tagAttrs || {}"
+            v-on="item.listeners"
+          >
+            <el-checkbox-button
+              v-for="(sub,index) in item.options"
+              :key="'checkbox-'+sub.value+'-'+index"
+              :label="sub.value"
+              :disabled="sub.disabled"
+              v-bind="item.tagAttrs || {}"
+            >
+              {{ sub.label }}
+            </el-checkbox-button>
           </el-checkbox-group>
           <!--time-picker-->
           <el-time-picker
@@ -203,9 +222,7 @@
                 :cell="{...cell}"
               />
             </template>
-          </el-date-picker>
-
-          
+          </el-date-picker>    
           <!--上传-->
           <!-- <UpLoad
             v-else-if="item.type === 'es-upload'"
