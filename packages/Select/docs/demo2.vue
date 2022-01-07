@@ -32,7 +32,7 @@ export default {
           key: 'selectValue',
           col: 12,
           width: '100px',
-          options: ref([
+          options: [
             {
               value: 'Option1',
               label: 'Option1',
@@ -42,7 +42,7 @@ export default {
               value: 'Option2',
               label: 'Option2'
             }
-          ]),
+          ],
           attrs: {
             placeholder: '请选择'
           },
@@ -56,11 +56,11 @@ export default {
           }
         }
       ]),
-      rules: ref({
+      rules: {
         selectValue: [
           { required: true, message: '不能为空', trigger: 'change' }
         ]
-      })
+      }
     }
   }
 };

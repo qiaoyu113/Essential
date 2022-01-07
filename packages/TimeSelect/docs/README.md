@@ -39,7 +39,15 @@ import demo2 from './demo2.vue'
 
 
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
+事件名 | 说明 | 回调参数 | 参数说明
 :-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+`change` | 用户确认选定的值时触发 | val，组件绑定值 
+`blur` | 在组件 Input 失去焦点时触发 | 组件实例 
+`focus` | 在组件 Input 获得焦点时触发 | 组件实例
+
+
+### 方法
+方法名 | 说明 | 回调参数 | 参数说明
+:-: | :-: | :-: | :-: 
+`blur` | 在组件 Input 失去焦点时触发 
+`focus` | blur the Input component 

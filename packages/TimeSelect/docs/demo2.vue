@@ -21,15 +21,11 @@ export default {
   name: "TimeSelect",
   
   setup() {
-    const value = reactive({ 
-        TimeSelectValue: '',
-        TimeEndValue: ''
+    let value = reactive({ 
+        TimeSelectValue: '08:00',
+        TimeEndValue: '09:00'
     })
-    const TimeSelectValue = toRefs(value).TimeSelectValue
-    console.log('TimeSelectValue',TimeSelectValue);
-    
-    
-    const formItem = [
+    let  formItem = [
         {
           type: 'es-time-select',
           label: 'StartTime',
@@ -38,12 +34,13 @@ export default {
           width: '100px',
           tagAttrs: {
             'placeholder': '请选择开始时间',
-            'start': "8:30",
-            'step': "00:15",
-            'end': "18:30"
+            'start': '8:30',
+            'step': '00:15',
+            'end': '18:30'
           },
           listeners: {
             'change': (val:any) => {
+              console.log("value.TimeSelectValue", value.TimeSelectValue);
               ElMessage({
                 message: '已经选中：' + val,
                 type: 'success'
@@ -59,14 +56,14 @@ export default {
           width: '100px',
           tagAttrs: {
             'placeholder': '请选择结束时间',
-            // 'min-time': TimeSelectValue,
-            'start': "08:30",
-            'step': "00:15",
-            'end': "18:30",
+            'min-time':value.TimeSelectValue,
+            'start': '08:30',
+            'step': '00:15',
+            'end': '18:30',
           },
           listeners: {
             'change': (val:any) => {
-              console.log("value.TimeSelectValue", value);
+              // console.log("value.TimeSelectValue", minTime.value);
               ElMessage({
                 message: '已经选中：' + val,
                 type: 'success'

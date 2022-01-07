@@ -21,8 +21,7 @@ export default {
   name: "DatePicker",
   
   setup() {
-    const date = ref('')
-    const value = reactive({ DatePickerValue: date })
+    const value = reactive({ DatePickerValue: '' })
     return {
       listQuery: value,
       formItem: [

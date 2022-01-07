@@ -27,6 +27,9 @@
 | [张慧慧](https://github.com/ZhangHhui) | 1191213054@qq.com |
 | [王云芳](https://github.com/TuanZi-77) | 2096745969@qq.com |
 # 
+### Github
+- [👉 ESSENTIAL (Github地址)](https://github.com/qiaoyu113/Essential)
+# 
 ### npm
 - [👉 ESSENTIAL (npm地址)](https://www.npmjs.com/package/es-com)
 

@@ -150,5 +150,35 @@
     "compZhName": "折线图",
     "compDesc": "EsCharts组件",
     "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsPie",
+    "compZhName": "饼状图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsScatter",
+    "compZhName": "散点图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsCandlestick",
+    "compZhName": "K 线图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsRadar",
+    "compZhName": "雷达图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
+  },
+  {
+    "compName": "EsChartsBoxplot",
+    "compZhName": "盒须图",
+    "compDesc": "EsCharts组件",
+    "compClassName": "EsCharts"
   }
 ]

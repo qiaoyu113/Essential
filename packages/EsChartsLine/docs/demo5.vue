@@ -9,12 +9,13 @@
 </template>
 
 <script lang="ts">
-import { reactive, onMounted, nextTick, ref } from 'vue'
+import { reactive, onMounted, nextTick, ref, onUnmounted } from 'vue'
 
 export default({
     name: 'EsChart5',
     setup() {
         const EsChartsRef: any = ref();
+        let time: any = null;
         const EsChart: any = reactive({ 
             Id: 'EsChart5', // 注意：id是唯一的，不能重复
             eWidth: '600px',
@@ -41,7 +42,7 @@ export default({
         onMounted(()=>{
             nextTick(() => {
                 let es = EsChartsRef.value.attrs
-                setInterval(() => {
+                time = setInterval(() => {
                     let datas = [Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1), Math.random()*(30)+(1)]
                     es.setOption({
                         series: [
@@ -53,7 +54,10 @@ export default({
                     })
                 }, 1500)
             })
-        });
+        })
+        onUnmounted(() => {
+            clearInterval(time)
+        })
         return {
             EsChart,
             EsChartsRef

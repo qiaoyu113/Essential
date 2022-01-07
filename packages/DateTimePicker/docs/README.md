@@ -40,7 +40,15 @@ import demo3 from './demo3.vue'
 `format` | 显示在输入框中的格式 | string | see date formats | `YYYY-MM-DD HH:mm:ss` | 否
 
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
+事件名 | 说明 | 回调参数 | 参数说明
 :-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+`change` | 用户确认选定的值时触发 | 	value
+`blur` | 在组件 Input 失去焦点时触发 | instance 
+`focus` | 在组件 Input 获得焦点时触发 | instance
+`calendar-change` | 如果用户没有选择日期，那默认展示当前日的月份。 选中日历日期后会执行的回调，只有当 datetimerange 才生效 | 	[Date, Date]
+
+
+### 方法
+方法名 | 说明 | 回调参数 | 参数说明
+:-: | :-: | :-: | :-: 
+`focus` | 使 input 获取焦点

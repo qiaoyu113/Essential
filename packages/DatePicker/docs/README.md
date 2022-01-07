@@ -99,8 +99,18 @@ import demo11 from './demo11.vue'
 `disabledDate` | 一个用来判断该日期是否被禁用的函数，接受一个 Date 对象作为参数 ，应该返回一个 Boolean 值 Should return a Boolean | function | - | `-` | 否
 `shortcuts` | 设置快捷选项，需要传入数组对象 | object[{ text: string, value: date / function }] | - | `-` | 否
 
+
+
+
 ### 事件
-事件名 | 说明 | 参数列表 | 参数说明
+事件名 | 说明 | 回调参数 | 参数说明
 :-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+`change` | 用户确认选定的值时触发 | 组件绑定值 
+`blur` | 在组件 Input 失去焦点时触发 | 组件实例 
+`focus` | 在组件 Input 获得焦点时触发 | 组件实例
+`calendar-change` | 如果用户没有选择日期，那默认展示当前日的月份。 你可以使用 default-value 来设置成其他的日期。 | 	[Date, Date]
+
+### 方法
+方法名 | 说明 | 回调参数 | 参数说明
+:-: | :-: | :-: | :-:
+`focus` | 使 input 获取焦点

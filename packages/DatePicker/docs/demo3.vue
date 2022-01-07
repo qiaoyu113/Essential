@@ -16,20 +16,16 @@
 <script lang="ts">
 
 import { ElMessage } from 'element-plus'
-import { ref, reactive } from 'vue'
+import {  reactive } from 'vue'
 
 export default {
   name: "DatePicker",
   
   setup() {
-    const date = ref('')
-    const MonthDate=ref('')
-    const YearDate=ref('')
-    const DatesDate=ref('')
-    const value = reactive({ DatePickerValue: date })
-    const MonthValue = reactive({ DatePickerMonthValue: MonthDate })
-    const YearValue = reactive({ DatePickerYearValue: YearDate })
-    const DatesValue = reactive({ DatePickerDatesValue: DatesDate })
+    const value = reactive({ DatePickerValue: '' })
+    const MonthValue = reactive({ DatePickerMonthValue: '' })
+    const YearValue = reactive({ DatePickerYearValue: '' })
+    const DatesValue = reactive({ DatePickerDatesValue: '' })
     return {
       listQuery: value,
       listQueryMonth: MonthValue,
@@ -80,7 +76,7 @@ export default {
           label: 'Year',
           key: 'DatePickerYearValue',
           col: 12,
-        width:60,
+          width:60,
           attrs: {
             'placeholder': '请选择',
             'type': 'year',//显示类型是year
