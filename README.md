@@ -1,4 +1,4 @@
-![npm](https://img.shields.io/npm/dt/es-com)![npm](https://img.shields.io/npm/v/es-com)
+![npm](https://img.shields.io/npm/dt/es-com) ![npm](https://img.shields.io/npm/v/es-com)
 # Essential
 
 ### 介绍
