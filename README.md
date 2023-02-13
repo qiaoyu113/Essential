@@ -64,5 +64,5 @@ npm install es-com --save
 ```
 
 # 
-1111
+11
 大功告成！
