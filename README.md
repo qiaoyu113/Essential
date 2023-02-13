@@ -64,5 +64,4 @@ npm install es-com --save
 ```
 
 # 
-<<<<<<< HEAD
 大功告成！
