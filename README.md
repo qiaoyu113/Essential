@@ -64,4 +64,9 @@ npm install es-com --save
 ```
 
 # 
+<<<<<<< HEAD
 大功告成！111
+=======
+11
+大功告成！
+>>>>>>> f4bf71f3652a74d248f58f740c1bc9c26ab2ecad
